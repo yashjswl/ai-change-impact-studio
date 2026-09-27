@@ -7,7 +7,7 @@ import { Button } from '../ui/Button'
 export function AppShell({ children }: { children: ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col bg-[#f4f6fa]">
-      <header className="sticky top-0 z-10 border-b border-white/10 bg-gradient-to-r from-navy-950 to-navy-900 text-white shadow-sm">
+      <header className="sticky top-0 z-10 border-b border-white/10 bg-gradient-to-r from-orange-950 via-orange-800 to-orange-700 text-white shadow-sm">
         <div className="mx-auto flex max-w-[88rem] items-center justify-between gap-4 px-6 py-3.5">
           <Link to="/" className="flex items-center gap-3">
             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/15">
