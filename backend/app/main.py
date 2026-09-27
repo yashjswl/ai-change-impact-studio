@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .config import CORS_ORIGINS
-from .db.base import Base, engine
+from .db.base import Base, SessionLocal, engine
 from .routers import (
     approvals,
     audit,
@@ -19,8 +19,12 @@ from .routers import (
     raid,
     training,
 )
+from .services.seed_service import seed_sample_project_if_empty
 
 Base.metadata.create_all(bind=engine)
+
+with SessionLocal() as _seed_db:
+    seed_sample_project_if_empty(_seed_db)
 
 app = FastAPI(title="AI Change Impact Studio API", version="0.1.0")
 
