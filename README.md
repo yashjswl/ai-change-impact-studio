@@ -1,8 +1,15 @@
 # AI Change Impact Studio
 
-A full-stack Python application for organizational change management, built to model how impact assessments, stakeholder analysis, and change communications.
+A full-stack Python application for organizational change management, built to model how impact assessments, stakeholder analysis, and change communications are actually produced in consulting practice, rather than as a generic LLM demo.
 
 Given a description of a business process change, the system generates a stakeholder impact assessment scored against the Prosci ADKAR model, a Red/Amber/Green readiness heat map, a RACI matrix, a RAID log, a structured communication plan, a training needs matrix, and exportable Word and PowerPoint deliverables. It also supports retrieval-augmented generation over uploaded process documentation, so a user can ask what changed between an old and a new process and receive a cited, independently verified answer.
+
+## Live demo
+
+- Application: https://ai-change-impact-studio.vercel.app
+- API: https://ai-change-impact-studio-api.onrender.com/health
+
+The backend is hosted on Render's free tier, which spins down after inactivity, so the first request after a period of idleness can take up to a minute while it restarts.
 
 ## Core technical focus
 
@@ -62,8 +69,6 @@ frontend/src/
 ## Scope and limitations
 
 Authentication is out of scope; this was built as a single-user tool. Schema management relies on SQLAlchemy's `create_all()` rather than a migration framework, which is adequate at this scale but not intended to scale further as-is. The application is deployed on a free-tier host without persistent disk storage, so the SQLite database resets on redeploy; this is the reason for the automatic seed step rather than a manual data-loading process. A production deployment would use Postgres and add authenticated reviewer accounts.
-
-Deployment instructions are documented separately in [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ---
 
