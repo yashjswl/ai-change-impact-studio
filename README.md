@@ -1,114 +1,62 @@
 # AI Change Impact Studio
 
-A full-stack change management platform modeled on how Big 4 firms (PwC's
-"Change Navigator," Prosci ADKAR, standard consulting RACI/RAID practice)
-actually run organizational change: a portfolio of change initiatives, each
-with an ADKAR-scored stakeholder impact assessment, an Impact × Readiness
-heat map, a RACI matrix, a RAID log, a structured communication plan,
-narrative communications, a training needs matrix, human-in-the-loop
-approvals with a full audit trail, and exportable Word/PowerPoint
-deliverables, grounded, where relevant, in your own process documents via
-RAG with verified citations.
+Most "AI wrapper" side projects are a chat window bolted onto a prompt. I wanted to see whether an LLM pipeline could hold up against a real methodology instead of just sounding plausible, so this is built around how change management is actually run at a firm like PwC, not around what looks good in a demo.
 
-This supersedes the earlier single-file Streamlit prototype
-(`../ai-change-impact-assistant/`, left untouched).
+You describe a business change, moving from manual to automated onboarding, migrating a billing system, whatever it is, and the app produces a stakeholder impact assessment scored against Prosci's ADKAR model, a Red/Amber/Green readiness heat map, a RACI matrix, a RAID log, a communications plan, a training needs matrix, and exportable Word/PowerPoint deliverables you could actually hand to a steering committee.
+
+It started as a single Streamlit script (still sitting in `../ai-change-impact-assistant/` if you want the before/after). I rebuilt it into a proper FastAPI + React app once it became clear the impact analysis needed to be more than a JSON blob with a UI on top: a real data model, editable stakeholder scores, an approval trail, things that make it usable by more than one person in one sitting.
+
+## How the scoring actually works
+
+The interesting part isn't the LLM call, it's turning five ADKAR scores per stakeholder into something you can act on. Prosci's framework says readiness isn't an average of Awareness, Desire, Knowledge, Ability, and Reinforcement, it's gated by whichever of those five is weakest first. A stakeholder scoring 5/5/2/5/5 isn't "80% ready," they're stuck on Knowledge, and everything downstream of that is noise until it's fixed. So `impact_service.py` finds the first dimension scoring 3 or below and weights the readiness score 65/35 toward that barrier over the raw average. That score, plus an LLM-assigned impact severity, gets banded into a 3x3 grid and mapped to Red/Amber/Green through an explicit lookup table, unit tested against all nine cells rather than trusted to "look about right."
+
+Citations from the document comparison tool get the same treatment. Instead of trusting the model's claim that an excerpt came from a given source, `citation_verify.py` checks the excerpt against the actual retrieved chunk before the UI is allowed to label it "Verified."
 
 ## Stack
 
-- **Backend**: FastAPI + SQLAlchemy 2.0 + SQLite (swap `DATABASE_URL` for
-  Postgres later), Google Gemini (`google-genai`) for structured LLM output,
-  TF-IDF (scikit-learn) for lightweight RAG, `python-docx` / `python-pptx`
-  for exports.
-- **Frontend**: React + Vite + TypeScript, Tailwind CSS, Recharts, a custom
-  heat map grid component.
+FastAPI, SQLAlchemy, SQLite (swap `DATABASE_URL` for Postgres if you need it to survive a redeploy). Google Gemini for structured output. TF-IDF for retrieval instead of an embedding model, four sample documents don't need a vector database. React, Vite, TypeScript, and Tailwind on the frontend. `python-docx` and `python-pptx` for the exports, which turned out to be the part I underestimated, getting a native PowerPoint table to color its own cells red, amber, and green without shipping a matplotlib image took longer than the ADKAR math did.
 
-## Methodology
+## Running it locally
 
-- **Prosci ADKAR**: every stakeholder is scored 1–5 on Awareness, Desire,
-  Knowledge, Ability, Reinforcement. The **barrier point**, the first
-  dimension scoring ≤3, drives the readiness score (barrier-weighted, not a
-  naive average), matching how Prosci practitioners actually diagnose
-  resistance.
-- **Impact × Readiness heat map**: each stakeholder is banded into
-  Low/Medium/High on both axes and rated Red/Amber/Green via an explicit
-  9-cell lookup table (`backend/app/services/impact_service.py`,
-  unit-tested against all 9 cells).
-- **RACI** and **RAID** are modeled as first-class, editable entities
-  distinct from the stakeholder impact analysis, as they are in real
-  consulting practice.
-- **Citations are verified, not trusted**: every RAG citation is checked
-  against the actual retrieved source text (fuzzy substring match) before
-  being shown as "Verified", a known gap in the original prototype, closed
-  here (`backend/app/ai/citation_verify.py`).
-
-## Setup
-
-### Backend
+Backend:
 
 ```bash
 cd backend
-python3 -m venv .venv
-source .venv/bin/activate
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
-# get a free key at https://aistudio.google.com/apikey (no card needed)
-# edit .env and add your GEMINI_API_KEY
+# grab a free key at https://aistudio.google.com/apikey, no card needed
 uvicorn app.main:app --reload --port 8000
 ```
 
-### Frontend
+Frontend:
 
 ```bash
 cd frontend
 npm install
-cp .env.example .env   # VITE_API_URL defaults to http://localhost:8000
+cp .env.example .env
 npm run dev
 ```
 
-Open http://localhost:5173, create an initiative, and click **Load Sample
-Docs** on the Documents tab to try the pre-built onboarding-automation
-scenario end to end.
+The first time the backend boots against an empty database it seeds a sample initiative on its own, an onboarding-automation scenario with documents already attached, so there's something to click into instead of a blank screen. It won't touch a database that already has data in it.
 
-## Project layout
+## Layout
 
 ```
-backend/
-  app/
-    main.py                 FastAPI app, router mounts, DB schema creation
-    db/models.py             Full SQLAlchemy data model (16 tables)
-    schemas/                 API request/response DTOs
-    ai/
-      llm.py                  Gemini wrapper (structured output, retry/timeout)
-      rag.py                  TF-IDF chunking + retrieval
-      llm_schemas.py           Pydantic schemas for every LLM generation task
-      generation.py            Orchestrates each LLM call
-      citation_verify.py       Verifies RAG citations against source text
-      prompts.py               System prompts per task
-    services/                 Business logic: heat-map formula, persistence,
-                               orchestration, one file per domain area
-    routers/                  Thin HTTP layer over services/
-    exporters/                docx_export.py / pptx_export.py
-  tests/                     pytest: heat-map formula (all 9 grid cells),
-                             citation verification
-  data/sample_docs/          Sample onboarding-automation dataset
-frontend/
-  src/
-    pages/                   One page per domain area (12 pages)
-    components/               heatmap/, adkar/, approvals/, export/, ui/
-    api/                       Typed REST client + TypeScript types
+backend/app/
+  ai/            Gemini wrapper, prompts, RAG, structured-output schemas, citation verification
+  db/models.py   the data model, 17 tables
+  services/      business logic, one file per domain: impact, raci, raid, comms, training, exports...
+  routers/       thin HTTP layer over services/
+  exporters/     docx/pptx builders
+frontend/src/
+  pages/         one per domain area
+  components/    heatmap/, adkar/, approvals/, ui/
+  api/           typed REST client
 ```
 
-## Verified end-to-end
+## What's not here
 
-- Live Gemini-backed impact analysis correctly produces ADKAR scores and the
-  barrier-weighted readiness/heat rating (confirmed: editing a stakeholder's
-  Desire score live in the UI correctly recomputes the barrier dimension,
-  readiness score, and heat color).
-- RACI, RAID, communication plan, narrative communications, and training
-  matrix all generate correctly from a persisted impact analysis.
-- RAG document comparison retrieves real excerpts and every citation is
-  verified against the source text before being marked "Verified" in the UI.
-- Approvals and audit trail persist correctly and are visible in the UI.
-- All three exports (.docx impact assessment, .docx communications, .pptx
-  5-slide executive summary) generate, download, and were verified to parse
-  correctly with `python-docx` / `python-pptx`.
+No auth, this was scoped as a single-user tool. No real migration tooling, `create_all()` is the whole schema story, which is fine at this size and won't stay fine forever. It's deployed for free, so the SQLite file resets on every Render redeploy since the free tier has no persistent disk, hence the auto-seed step instead of a manual data-loading story. If I picked this back up, Postgres and a proper reviewer login would be first on the list.
+
+Deployment notes are in [DEPLOYMENT.md](DEPLOYMENT.md).
