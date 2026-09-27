@@ -1,22 +1,20 @@
 # AI Change Impact Studio
 
-A full-stack Python application for organizational change management, built to model how impact assessments, stakeholder analysis, and change communications are actually produced in consulting practice (Prosci ADKAR, PwC's Change Navigator, standard RACI/RAID methodology), rather than as a generic LLM demo.
+A full-stack Python application for organizational change management, built to model how impact assessments, stakeholder analysis, and change communications.
 
-Given a description of a business process change, the system generates a stakeholder impact assessment scored against the Prosci ADKAR model, a Red/Amber/Green readiness heat map, a RACI matrix, a RAID log, a structured communication plan, a training needs matrix, and exportable Word and PowerPoint deliverables. It also supports retrieval-augmented generation over uploaded process documentation, so a user can ask what changed between an old and a new process and receive a cited, independently verified answer rather than a plausible-sounding one.
-
-The project began as a single-file Streamlit prototype, retained at `../ai-change-impact-assistant/` for comparison, and was rebuilt into a full-stack FastAPI and React application to support persistent multi-project data, editable stakeholder scoring, and an audit trail for human review of AI-generated content.
+Given a description of a business process change, the system generates a stakeholder impact assessment scored against the Prosci ADKAR model, a Red/Amber/Green readiness heat map, a RACI matrix, a RAID log, a structured communication plan, a training needs matrix, and exportable Word and PowerPoint deliverables. It also supports retrieval-augmented generation over uploaded process documentation, so a user can ask what changed between an old and a new process and receive a cited, independently verified answer.
 
 ## Core technical focus
 
 The backend is written entirely in Python, and the architecture is organized around two problems central to production LLM systems: structured output and retrieval-augmented generation.
 
-**Structured LLM output.** Every generation task, impact analysis, RACI, RAID, communications, training matrices, document comparison, is implemented as a structured output call to Google Gemini, using Pydantic schemas as the response contract (`backend/app/ai/llm_schemas.py`). Nothing is parsed from free text. The LLM client includes retry logic and request timeouts for production reliability rather than assuming the API call always succeeds (`backend/app/ai/llm.py`).
+**Structured LLM output.** Every generation task, impact analysis, RACI, RAID, communications, training matrices, document comparison, is implemented as a structured output call to Google Gemini, using Pydantic schemas as the response contract (`backend/app/ai/llm_schemas.py`). The LLM client includes retry logic and request timeouts for production reliability.
 
-**Retrieval-augmented generation.** Uploaded documents are chunked and indexed with TF-IDF (`backend/app/ai/rag.py`), which avoids the overhead of an embedding model for a small, per-project document set. Retrieved chunks are passed to the LLM as grounding context, and every citation the model returns is independently checked against the retrieved source text (`backend/app/ai/citation_verify.py`) before the UI labels it as verified. Citation grounding is validated, not assumed.
+**Retrieval-augmented generation.** Uploaded documents are chunked and indexed with TF-IDF (`backend/app/ai/rag.py`), which avoids the overhead of an embedding model for a small, per-project document set. Retrieved chunks are passed to the LLM as grounding context, and every citation the model returns is independently checked against the retrieved source text (`backend/app/ai/citation_verify.py`) before the UI labels it as verified.
 
 ## Readiness scoring model
 
-The stakeholder heat map is the analytical core of the application. Each stakeholder is scored across the five Prosci ADKAR dimensions: Awareness, Desire, Knowledge, Ability, and Reinforcement. Prosci's methodology treats readiness as gated by the weakest dimension rather than as an average, since a stakeholder cannot demonstrate Ability without first having Desire. `backend/app/services/impact_service.py` identifies the first ADKAR dimension scoring 3 or below as the barrier point and weights the readiness score 65/35 toward that barrier over the raw average. Readiness and an LLM-assigned impact severity are then banded into a 3x3 grid and mapped to a Red, Amber, or Green rating through an explicit lookup table, which is unit tested against all nine grid cells.
+Each stakeholder is scored across the five Prosci ADKAR dimensions: Awareness, Desire, Knowledge, Ability, and Reinforcement. Prosci's methodology treats readiness as gated by the weakest dimension rather than as an average, since a stakeholder cannot demonstrate Ability without first having Desire. `backend/app/services/impact_service.py` identifies the first ADKAR dimension scoring 3 or below as the barrier point and weights the readiness score 65/35 toward that barrier over the raw average. Readiness and an LLM-assigned impact severity are then banded into a 3x3 grid and mapped to a Red, Amber, or Green rating through an explicit lookup table, which is unit tested against all nine grid cells.
 
 ## Stack
 
@@ -45,8 +43,6 @@ npm install
 cp .env.example .env
 npm run dev
 ```
-
-On first boot, if the database is empty, the backend automatically seeds a sample initiative (an onboarding-automation scenario with sample documents attached) so the application is immediately usable rather than starting from a blank state. A database that already contains data is left untouched.
 
 ## Project layout
 
