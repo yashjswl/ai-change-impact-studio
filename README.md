@@ -11,6 +11,28 @@ Given a description of a business process change, the system generates a stakeho
 
 The backend is hosted on Render's free tier, which spins down after inactivity, so the first request after a period of idleness can take up to a minute while it restarts.
 
+## Screenshots
+
+**Portfolio.** Every initiative with its readiness score, stakeholder risk counts, and open RAID items.
+
+![Portfolio dashboard](docs/screenshots/01-portfolio.png)
+
+**Impact assessment with ADKAR scoring.** LLM-drafted stakeholder analysis grounded in the uploaded documents. ADKAR scores are editable, and the barrier point, readiness score, and heat rating recompute on every change.
+
+![Impact assessment and ADKAR scoring](docs/screenshots/03-impact-adkar.png)
+
+**Readiness heat map.** Stakeholders plotted by impact against readiness and rated Red, Amber, or Green.
+
+![Readiness heat map](docs/screenshots/02-heatmap.png)
+
+**Communication plan.** A structured plan by audience, message, channel, owner, and timing, generated from the impact analysis.
+
+![Communication plan](docs/screenshots/04-communications.png)
+
+**Document comparison with citation verification.** A retrieval-grounded comparison of old and new process documents. Each citation is checked against the retrieved source text, so a paraphrased excerpt is flagged as unverified rather than accepted.
+
+![Document comparison](docs/screenshots/05-document-comparison.png)
+
 ## Core technical focus
 
 The backend is written entirely in Python, and the architecture is organized around two problems central to production LLM systems: structured output and retrieval-augmented generation.
