@@ -70,6 +70,12 @@ frontend/src/
 
 Authentication is out of scope; this was built as a single-user tool. Schema management relies on SQLAlchemy's `create_all()` rather than a migration framework, which is adequate at this scale but not intended to scale further as-is. The application is deployed on a free-tier host without persistent disk storage, so the SQLite database resets on redeploy; this is the reason for the automatic seed step rather than a manual data-loading process. A production deployment would use Postgres and add authenticated reviewer accounts.
 
+## Contact
+
+From Yashasvi Jaiswal.
+
+LinkedIn: [linkedin.com/in/yashjswl](https://www.linkedin.com/in/yashjswl/)
+
 ---
 
-From [Yashasvi Jaiswal](https://www.linkedin.com/in/yashjswl/)
+&copy; 2026 Yashasvi Jaiswal. All rights reserved.
