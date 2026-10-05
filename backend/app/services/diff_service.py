@@ -4,8 +4,23 @@ from sqlalchemy.orm import Session
 
 from ..ai import generation
 from ..ai.citation_verify import verify_citation
+from ..ai.rag import Chunk, DocumentStore
 from ..db import models
 from . import audit_service, document_service
+
+# A "what changed" question shares little vocabulary with the documents, so
+# retrieval hands the model only part of each one. Measured in backend/eval:
+# on small corpora, retrieval put under half the chunks in context and recall of
+# known changes was 0.55, versus 0.91 with the full documents. Below this size
+# the whole project is passed to the model; above it, retrieval takes over.
+FULL_CONTEXT_MAX_CHUNKS = 40
+RETRIEVAL_TOP_K = 10
+
+
+def select_context_chunks(store: DocumentStore, question: str) -> list[Chunk]:
+    if len(store.chunks) <= FULL_CONTEXT_MAX_CHUNKS:
+        return list(store.chunks)
+    return store.search(question, top_k=RETRIEVAL_TOP_K)
 
 
 def compare(db: Session, project_id: int, question: str) -> models.DocumentDiffAnalysisRow:
@@ -15,15 +30,16 @@ def compare(db: Session, project_id: int, question: str) -> models.DocumentDiffA
             "No documents loaded for this project. Upload old/new process docs "
             "(and optionally policies / implementation plan) first."
         )
-    chunks = store.search(question, top_k=10)
+    chunks = select_context_chunks(store, question)
     if not chunks:
         raise ValueError("No relevant content found in the uploaded documents for this question.")
 
     context = store.format_context(chunks)
-    # index retrieved chunk text by source doc name for citation verification
-    source_text_by_doc: dict[str, str] = {}
-    for c in chunks:
-        source_text_by_doc[c.doc_name] = source_text_by_doc.get(c.doc_name, "") + "\n" + c.text
+    # Verify citations against each cited document's full text. Chunks overlap by
+    # only 150 characters, so a quote longer than that can straddle a chunk
+    # boundary and fail to match when chunks are simply concatenated (measured in
+    # backend/eval: 3 of 5 rejected real quotes were this artifact).
+    source_text_by_doc = {d.filename: d.raw_text for d in document_service.list_documents(db, project_id)}
 
     result = generation.analyze_document_diff(question, context)
 

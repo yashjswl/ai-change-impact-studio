@@ -1,0 +1,3296 @@
+{
+  "meta": {
+    "date": "2026-10-05",
+    "split": "test",
+    "n_questions": 26,
+    "n_docs": 12,
+    "n_chunks": 35,
+    "chunker": {
+      "chunk_size": 900,
+      "overlap": 150
+    }
+  },
+  "chance": {
+    "hit@1": 0.036263736263736274,
+    "hit@3": 0.10724569548098964,
+    "hit@5": 0.1762061467943821
+  },
+  "variants": {
+    "tfidf": {
+      "overall": {
+        "n": 26,
+        "hit@1": {
+          "value": 0.6538461538461539,
+          "ci": [
+            0.46220229009632996,
+            0.8058798502714787
+          ]
+        },
+        "hit@3": {
+          "value": 0.8846153846153846,
+          "ci": [
+            0.7102370691310166,
+            0.959968281788505
+          ]
+        },
+        "hit@5": {
+          "value": 0.9615384615384616,
+          "ci": [
+            0.811068230080416,
+            0.9931781910230102
+          ]
+        },
+        "recall@5": {
+          "value": 0.9230769230769231,
+          "ci": [
+            0.8269230769230769,
+            1.0
+          ]
+        },
+        "mrr@10": {
+          "value": 0.782051282051282,
+          "ci": [
+            0.6538461538461539,
+            0.8974358974358974
+          ]
+        }
+      },
+      "by_type": {
+        "change": {
+          "n": 3,
+          "hit@1": {
+            "value": 0.6666666666666666,
+            "ci": [
+              0.2076549551264879,
+              0.9385096847238394
+            ]
+          },
+          "hit@3": {
+            "value": 1.0,
+            "ci": [
+              0.43849391955098227,
+              1.0
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.43849391955098227,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 0.6666666666666666,
+            "ci": [
+              0.5,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.5,
+              1.0
+            ]
+          }
+        },
+        "factual": {
+          "n": 16,
+          "hit@1": {
+            "value": 0.6875,
+            "ci": [
+              0.4440393186673406,
+              0.8583556494803894
+            ]
+          },
+          "hit@3": {
+            "value": 0.9375,
+            "ci": [
+              0.7167073163197013,
+              0.9888809426916687
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.8063865817272802,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.8177083333333334,
+            "ci": [
+              0.6770833333333334,
+              0.9375
+            ]
+          }
+        },
+        "lexical_mismatch": {
+          "n": 6,
+          "hit@1": {
+            "value": 0.6666666666666666,
+            "ci": [
+              0.29998832134152864,
+              0.9032306674407831
+            ]
+          },
+          "hit@3": {
+            "value": 0.6666666666666666,
+            "ci": [
+              0.29998832134152864,
+              0.9032306674407831
+            ]
+          },
+          "hit@5": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.43649056343635395,
+              0.9699474141282697
+            ]
+          },
+          "recall@5": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.5,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.7083333333333334,
+            "ci": [
+              0.375,
+              1.0
+            ]
+          }
+        },
+        "multi_evidence": {
+          "n": 1,
+          "hit@1": {
+            "value": 0.0,
+            "ci": [
+              0.0,
+              0.7934567085261071
+            ]
+          },
+          "hit@3": {
+            "value": 1.0,
+            "ci": [
+              0.20654329147389294,
+              1.0
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.20654329147389294,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.5,
+            "ci": [
+              0.5,
+              0.5
+            ]
+          }
+        }
+      },
+      "per_question": [
+        {
+          "id": "q03",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_new.md#1",
+            "expense_old.md#0",
+            "expense_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_new.md#2",
+            "expense_new.md#1",
+            "old_process.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_old.md#2",
+            "expense_new.md#0",
+            "implementation_plan.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "change",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "vendor_new.md#0",
+            "vendor_old.md#2",
+            "vendor_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.5,
+          "recall@3": 0.5,
+          "recall@5": 0.5
+        },
+        {
+          "id": "q14",
+          "type": "factual",
+          "first_gold_rank": 3,
+          "top_docs": [
+            "vendor_old.md#0",
+            "vendor_new.md#0",
+            "vendor_old.md#1"
+          ],
+          "rr": 0.3333333333333333,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "vendor_new.md#1",
+            "vendor_old.md#1",
+            "vendor_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "vendor_new.md#2",
+            "vendor_new.md#0",
+            "vendor_old.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_new.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "lexical_mismatch",
+          "first_gold_rank": null,
+          "top_docs": [
+            "refund_old.md#0",
+            "incident_old.md#1",
+            "expense_new.md#2"
+          ],
+          "rr": 0.0,
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0
+        },
+        {
+          "id": "q21",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_new.md#1",
+            "incident_new.md#2",
+            "incident_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_old.md#2",
+            "incident_new.md#2",
+            "company_policies.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "factual",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "incident_new.md#0",
+            "incident_old.md#0",
+            "incident_new.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "factual",
+          "first_gold_rank": 4,
+          "top_docs": [
+            "refund_old.md#0",
+            "refund_new.md#0",
+            "refund_new.md#1"
+          ],
+          "rr": 0.25,
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "change",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_old.md#2",
+            "refund_new.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.5,
+          "recall@3": 0.5,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_new.md#2",
+            "refund_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_new.md#0",
+            "refund_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "factual",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "refund_new.md#2",
+            "refund_old.md#1",
+            "refund_new.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 4,
+          "top_docs": [
+            "refund_old.md#2",
+            "refund_new.md#2",
+            "refund_old.md#1"
+          ],
+          "rr": 0.25,
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q32",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_new.md#0",
+            "refund_old.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q34",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "company_policies.md#0",
+            "implementation_plan.md#1",
+            "old_process.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q35",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "company_policies.md#1",
+            "incident_new.md#1",
+            "expense_old.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q36",
+          "type": "change",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "old_process.md#2",
+            "new_process.md#1",
+            "company_policies.md#0"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 0.5,
+          "recall@5": 0.5
+        },
+        {
+          "id": "q37",
+          "type": "factual",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "new_process.md#0",
+            "implementation_plan.md#0",
+            "implementation_plan.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q39",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "implementation_plan.md#0",
+            "expense_new.md#3",
+            "incident_new.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q40",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "old_process.md#2",
+            "old_process.md#0",
+            "new_process.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q42",
+          "type": "multi_evidence",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "incident_new.md#0",
+            "incident_new.md#2",
+            "incident_old.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        }
+      ]
+    },
+    "tfidf_stem": {
+      "overall": {
+        "n": 26,
+        "hit@1": {
+          "value": 0.6153846153846154,
+          "ci": [
+            0.42534520039420076,
+            0.7757164048816557
+          ]
+        },
+        "hit@3": {
+          "value": 0.9230769230769231,
+          "ci": [
+            0.7585805251948495,
+            0.9786453608166245
+          ]
+        },
+        "hit@5": {
+          "value": 0.9615384615384616,
+          "ci": [
+            0.811068230080416,
+            0.9931781910230102
+          ]
+        },
+        "recall@5": {
+          "value": 0.9423076923076923,
+          "ci": [
+            0.8461538461538461,
+            1.0
+          ]
+        },
+        "mrr@10": {
+          "value": 0.7532051282051282,
+          "ci": [
+            0.6185897435897435,
+            0.8782051282051282
+          ]
+        }
+      },
+      "by_type": {
+        "change": {
+          "n": 3,
+          "hit@1": {
+            "value": 0.3333333333333333,
+            "ci": [
+              0.0614903152761605,
+              0.7923450448735121
+            ]
+          },
+          "hit@3": {
+            "value": 1.0,
+            "ci": [
+              0.43849391955098227,
+              1.0
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.43849391955098227,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.5,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.611111111111111,
+            "ci": [
+              0.3333333333333333,
+              1.0
+            ]
+          }
+        },
+        "factual": {
+          "n": 16,
+          "hit@1": {
+            "value": 0.6875,
+            "ci": [
+              0.4440393186673406,
+              0.8583556494803894
+            ]
+          },
+          "hit@3": {
+            "value": 1.0,
+            "ci": [
+              0.8063865817272802,
+              1.0
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.8063865817272802,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.8125,
+            "ci": [
+              0.6666666666666666,
+              0.9375
+            ]
+          }
+        },
+        "lexical_mismatch": {
+          "n": 6,
+          "hit@1": {
+            "value": 0.6666666666666666,
+            "ci": [
+              0.29998832134152864,
+              0.9032306674407831
+            ]
+          },
+          "hit@3": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.43649056343635395,
+              0.9699474141282697
+            ]
+          },
+          "hit@5": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.43649056343635395,
+              0.9699474141282697
+            ]
+          },
+          "recall@5": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.5,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.75,
+            "ci": [
+              0.4166666666666667,
+              1.0
+            ]
+          }
+        },
+        "multi_evidence": {
+          "n": 1,
+          "hit@1": {
+            "value": 0.0,
+            "ci": [
+              0.0,
+              0.7934567085261071
+            ]
+          },
+          "hit@3": {
+            "value": 0.0,
+            "ci": [
+              0.0,
+              0.7934567085261071
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.20654329147389294,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.25,
+            "ci": [
+              0.25,
+              0.25
+            ]
+          }
+        }
+      },
+      "per_question": [
+        {
+          "id": "q03",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_new.md#1",
+            "expense_new.md#0",
+            "expense_old.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_new.md#2",
+            "expense_new.md#1",
+            "expense_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_old.md#2",
+            "old_process.md#1",
+            "vendor_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "change",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "vendor_new.md#0",
+            "vendor_old.md#0",
+            "vendor_old.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.5,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q14",
+          "type": "factual",
+          "first_gold_rank": 3,
+          "top_docs": [
+            "vendor_new.md#0",
+            "vendor_old.md#0",
+            "vendor_old.md#1"
+          ],
+          "rr": 0.3333333333333333,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "vendor_new.md#1",
+            "vendor_new.md#0",
+            "vendor_old.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "factual",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "vendor_new.md#0",
+            "vendor_new.md#2",
+            "vendor_new.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_new.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "lexical_mismatch",
+          "first_gold_rank": null,
+          "top_docs": [
+            "expense_new.md#3",
+            "incident_old.md#2",
+            "incident_old.md#0"
+          ],
+          "rr": 0.0,
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0
+        },
+        {
+          "id": "q21",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_new.md#1",
+            "incident_old.md#1",
+            "incident_new.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_old.md#2",
+            "incident_new.md#1",
+            "incident_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "factual",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "incident_new.md#0",
+            "incident_old.md#0",
+            "incident_new.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "factual",
+          "first_gold_rank": 3,
+          "top_docs": [
+            "refund_old.md#0",
+            "refund_new.md#0",
+            "refund_old.md#1"
+          ],
+          "rr": 0.3333333333333333,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "change",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "refund_new.md#0",
+            "refund_old.md#0",
+            "refund_old.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 0.5,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_new.md#2",
+            "refund_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_new.md#0",
+            "refund_old.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_old.md#1",
+            "refund_new.md#2",
+            "refund_old.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "refund_old.md#2",
+            "refund_new.md#0",
+            "refund_old.md#0"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q32",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_old.md#1",
+            "refund_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q34",
+          "type": "factual",
+          "first_gold_rank": 3,
+          "top_docs": [
+            "new_process.md#2",
+            "implementation_plan.md#1",
+            "company_policies.md#0"
+          ],
+          "rr": 0.3333333333333333,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q35",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "company_policies.md#1",
+            "expense_old.md#0",
+            "expense_new.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q36",
+          "type": "change",
+          "first_gold_rank": 3,
+          "top_docs": [
+            "old_process.md#2",
+            "company_policies.md#1",
+            "new_process.md#1"
+          ],
+          "rr": 0.3333333333333333,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 0.5,
+          "recall@5": 0.5
+        },
+        {
+          "id": "q37",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "implementation_plan.md#0",
+            "new_process.md#0",
+            "implementation_plan.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q39",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "implementation_plan.md#0",
+            "expense_new.md#3",
+            "refund_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q40",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "old_process.md#2",
+            "new_process.md#0",
+            "old_process.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q42",
+          "type": "multi_evidence",
+          "first_gold_rank": 4,
+          "top_docs": [
+            "incident_new.md#1",
+            "incident_old.md#2",
+            "incident_new.md#0"
+          ],
+          "rr": 0.25,
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0
+        }
+      ]
+    },
+    "bm25": {
+      "overall": {
+        "n": 26,
+        "hit@1": {
+          "value": 0.6923076923076923,
+          "ci": [
+            0.5001138848576876,
+            0.8349887906020732
+          ]
+        },
+        "hit@3": {
+          "value": 0.8461538461538461,
+          "ci": [
+            0.6646841558168644,
+            0.9385006600107053
+          ]
+        },
+        "hit@5": {
+          "value": 0.9230769230769231,
+          "ci": [
+            0.7585805251948495,
+            0.9786453608166245
+          ]
+        },
+        "recall@5": {
+          "value": 0.9038461538461539,
+          "ci": [
+            0.7692307692307693,
+            1.0
+          ]
+        },
+        "mrr@10": {
+          "value": 0.792948717948718,
+          "ci": [
+            0.6608974358974359,
+            0.9134615384615384
+          ]
+        }
+      },
+      "by_type": {
+        "change": {
+          "n": 3,
+          "hit@1": {
+            "value": 1.0,
+            "ci": [
+              0.43849391955098227,
+              1.0
+            ]
+          },
+          "hit@3": {
+            "value": 1.0,
+            "ci": [
+              0.43849391955098227,
+              1.0
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.43849391955098227,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.5,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "factual": {
+          "n": 16,
+          "hit@1": {
+            "value": 0.75,
+            "ci": [
+              0.5050123107060135,
+              0.8981809801576265
+            ]
+          },
+          "hit@3": {
+            "value": 0.875,
+            "ci": [
+              0.6397666856325173,
+              0.9650232506629428
+            ]
+          },
+          "hit@5": {
+            "value": 0.9375,
+            "ci": [
+              0.7167073163197013,
+              0.9888809426916687
+            ]
+          },
+          "recall@5": {
+            "value": 0.9375,
+            "ci": [
+              0.8125,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.8385416666666666,
+            "ci": [
+              0.6875,
+              0.96875
+            ]
+          }
+        },
+        "lexical_mismatch": {
+          "n": 6,
+          "hit@1": {
+            "value": 0.5,
+            "ci": [
+              0.18761280689940868,
+              0.8123871931005913
+            ]
+          },
+          "hit@3": {
+            "value": 0.6666666666666666,
+            "ci": [
+              0.29998832134152864,
+              0.9032306674407831
+            ]
+          },
+          "hit@5": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.43649056343635395,
+              0.9699474141282697
+            ]
+          },
+          "recall@5": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.5,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.6166666666666667,
+            "ci": [
+              0.2833333333333333,
+              0.9166666666666666
+            ]
+          }
+        },
+        "multi_evidence": {
+          "n": 1,
+          "hit@1": {
+            "value": 0.0,
+            "ci": [
+              0.0,
+              0.7934567085261071
+            ]
+          },
+          "hit@3": {
+            "value": 1.0,
+            "ci": [
+              0.20654329147389294,
+              1.0
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.20654329147389294,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.5,
+            "ci": [
+              0.5,
+              0.5
+            ]
+          }
+        }
+      },
+      "per_question": [
+        {
+          "id": "q03",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_new.md#1",
+            "expense_old.md#0",
+            "incident_new.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_new.md#2",
+            "expense_new.md#1",
+            "expense_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_old.md#2",
+            "expense_new.md#0",
+            "implementation_plan.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "change",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "vendor_new.md#0",
+            "vendor_old.md#2",
+            "vendor_new.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.5,
+          "recall@3": 0.5,
+          "recall@5": 0.5
+        },
+        {
+          "id": "q14",
+          "type": "factual",
+          "first_gold_rank": 6,
+          "top_docs": [
+            "vendor_old.md#0",
+            "vendor_new.md#0",
+            "vendor_old.md#2"
+          ],
+          "rr": 0.16666666666666666,
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0
+        },
+        {
+          "id": "q15",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "vendor_new.md#1",
+            "vendor_old.md#1",
+            "vendor_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "vendor_new.md#2",
+            "vendor_new.md#0",
+            "vendor_old.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_new.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "lexical_mismatch",
+          "first_gold_rank": null,
+          "top_docs": [
+            "refund_old.md#0",
+            "incident_old.md#1",
+            "incident_old.md#0"
+          ],
+          "rr": 0.0,
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0
+        },
+        {
+          "id": "q21",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_new.md#1",
+            "incident_old.md#1",
+            "incident_new.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_old.md#2",
+            "incident_new.md#2",
+            "incident_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "factual",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "incident_new.md#0",
+            "incident_old.md#0",
+            "incident_new.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "factual",
+          "first_gold_rank": 4,
+          "top_docs": [
+            "refund_old.md#0",
+            "refund_new.md#0",
+            "refund_new.md#1"
+          ],
+          "rr": 0.25,
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "change",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "expense_old.md#0",
+            "refund_old.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.5,
+          "recall@3": 0.5,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_old.md#1",
+            "refund_new.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_new.md#0",
+            "refund_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "factual",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "refund_new.md#2",
+            "refund_old.md#1",
+            "refund_new.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 5,
+          "top_docs": [
+            "refund_old.md#2",
+            "refund_new.md#2",
+            "refund_old.md#1"
+          ],
+          "rr": 0.2,
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q32",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_old.md#1",
+            "refund_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q34",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "company_policies.md#0",
+            "new_process.md#2",
+            "old_process.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q35",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "incident_new.md#1",
+            "company_policies.md#1",
+            "expense_old.md#0"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q36",
+          "type": "change",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "new_process.md#1",
+            "old_process.md#2",
+            "company_policies.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.5,
+          "recall@3": 0.5,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q37",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "implementation_plan.md#0",
+            "new_process.md#0",
+            "implementation_plan.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q39",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "implementation_plan.md#0",
+            "incident_new.md#1",
+            "expense_new.md#3"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q40",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "old_process.md#2",
+            "incident_old.md#0",
+            "incident_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q42",
+          "type": "multi_evidence",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "incident_new.md#0",
+            "incident_new.md#2",
+            "incident_old.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        }
+      ]
+    },
+    "bm25_stem": {
+      "overall": {
+        "n": 26,
+        "hit@1": {
+          "value": 0.6923076923076923,
+          "ci": [
+            0.5001138848576876,
+            0.8349887906020732
+          ]
+        },
+        "hit@3": {
+          "value": 0.8846153846153846,
+          "ci": [
+            0.7102370691310166,
+            0.959968281788505
+          ]
+        },
+        "hit@5": {
+          "value": 0.9615384615384616,
+          "ci": [
+            0.811068230080416,
+            0.9931781910230102
+          ]
+        },
+        "recall@5": {
+          "value": 0.9423076923076923,
+          "ci": [
+            0.8461538461538461,
+            1.0
+          ]
+        },
+        "mrr@10": {
+          "value": 0.7948717948717949,
+          "ci": [
+            0.6634615384615384,
+            0.9134615384615384
+          ]
+        }
+      },
+      "by_type": {
+        "change": {
+          "n": 3,
+          "hit@1": {
+            "value": 1.0,
+            "ci": [
+              0.43849391955098227,
+              1.0
+            ]
+          },
+          "hit@3": {
+            "value": 1.0,
+            "ci": [
+              0.43849391955098227,
+              1.0
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.43849391955098227,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.5,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "factual": {
+          "n": 16,
+          "hit@1": {
+            "value": 0.6875,
+            "ci": [
+              0.4440393186673406,
+              0.8583556494803894
+            ]
+          },
+          "hit@3": {
+            "value": 0.875,
+            "ci": [
+              0.6397666856325173,
+              0.9650232506629428
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.8063865817272802,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.8125,
+            "ci": [
+              0.65625,
+              0.9375
+            ]
+          }
+        },
+        "lexical_mismatch": {
+          "n": 6,
+          "hit@1": {
+            "value": 0.6666666666666666,
+            "ci": [
+              0.29998832134152864,
+              0.9032306674407831
+            ]
+          },
+          "hit@3": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.43649056343635395,
+              0.9699474141282697
+            ]
+          },
+          "hit@5": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.43649056343635395,
+              0.9699474141282697
+            ]
+          },
+          "recall@5": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.5,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.7222222222222222,
+            "ci": [
+              0.3888888888888889,
+              1.0
+            ]
+          }
+        },
+        "multi_evidence": {
+          "n": 1,
+          "hit@1": {
+            "value": 0.0,
+            "ci": [
+              0.0,
+              0.7934567085261071
+            ]
+          },
+          "hit@3": {
+            "value": 1.0,
+            "ci": [
+              0.20654329147389294,
+              1.0
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.20654329147389294,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.3333333333333333,
+            "ci": [
+              0.3333333333333333,
+              0.3333333333333333
+            ]
+          }
+        }
+      },
+      "per_question": [
+        {
+          "id": "q03",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_new.md#1",
+            "incident_new.md#1",
+            "expense_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_new.md#2",
+            "expense_new.md#1",
+            "expense_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_old.md#2",
+            "old_process.md#1",
+            "expense_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "change",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "vendor_new.md#0",
+            "vendor_new.md#1",
+            "vendor_new.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.5,
+          "recall@3": 0.5,
+          "recall@5": 0.5
+        },
+        {
+          "id": "q14",
+          "type": "factual",
+          "first_gold_rank": 4,
+          "top_docs": [
+            "vendor_old.md#0",
+            "vendor_new.md#0",
+            "vendor_old.md#2"
+          ],
+          "rr": 0.25,
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "vendor_new.md#1",
+            "vendor_new.md#0",
+            "vendor_old.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "factual",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "vendor_new.md#0",
+            "vendor_new.md#2",
+            "vendor_new.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_new.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "lexical_mismatch",
+          "first_gold_rank": null,
+          "top_docs": [
+            "incident_old.md#0",
+            "incident_old.md#2",
+            "expense_new.md#3"
+          ],
+          "rr": 0.0,
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 0.0
+        },
+        {
+          "id": "q21",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_new.md#1",
+            "incident_old.md#1",
+            "incident_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_old.md#2",
+            "incident_new.md#1",
+            "incident_new.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "factual",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "incident_new.md#0",
+            "incident_old.md#0",
+            "incident_new.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "factual",
+          "first_gold_rank": 4,
+          "top_docs": [
+            "refund_old.md#0",
+            "refund_new.md#0",
+            "refund_new.md#1"
+          ],
+          "rr": 0.25,
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "change",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_old.md#0",
+            "refund_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.5,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_old.md#1",
+            "refund_new.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_new.md#0",
+            "refund_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_old.md#1",
+            "refund_new.md#2",
+            "refund_old.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 3,
+          "top_docs": [
+            "refund_old.md#2",
+            "refund_old.md#0",
+            "refund_new.md#0"
+          ],
+          "rr": 0.3333333333333333,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q32",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_new.md#2",
+            "refund_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q34",
+          "type": "factual",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "new_process.md#2",
+            "company_policies.md#0",
+            "old_process.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q35",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "company_policies.md#1",
+            "expense_old.md#0",
+            "implementation_plan.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q36",
+          "type": "change",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "new_process.md#1",
+            "old_process.md#2",
+            "company_policies.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.5,
+          "recall@3": 0.5,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q37",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "implementation_plan.md#0",
+            "implementation_plan.md#1",
+            "new_process.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q39",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "implementation_plan.md#0",
+            "expense_new.md#3",
+            "refund_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q40",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "old_process.md#2",
+            "old_process.md#0",
+            "vendor_new.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q42",
+          "type": "multi_evidence",
+          "first_gold_rank": 3,
+          "top_docs": [
+            "incident_new.md#1",
+            "incident_old.md#2",
+            "incident_new.md#2"
+          ],
+          "rr": 0.3333333333333333,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        }
+      ]
+    },
+    "embeddings": {
+      "overall": {
+        "n": 26,
+        "hit@1": {
+          "value": 0.6538461538461539,
+          "ci": [
+            0.46220229009632996,
+            0.8058798502714787
+          ]
+        },
+        "hit@3": {
+          "value": 0.9615384615384616,
+          "ci": [
+            0.811068230080416,
+            0.9931781910230102
+          ]
+        },
+        "hit@5": {
+          "value": 1.0,
+          "ci": [
+            0.8712669561953784,
+            1.0
+          ]
+        },
+        "recall@5": {
+          "value": 0.9807692307692307,
+          "ci": [
+            0.9423076923076923,
+            1.0
+          ]
+        },
+        "mrr@10": {
+          "value": 0.7916666666666666,
+          "ci": [
+            0.6730769230769231,
+            0.9038461538461539
+          ]
+        }
+      },
+      "by_type": {
+        "change": {
+          "n": 3,
+          "hit@1": {
+            "value": 0.0,
+            "ci": [
+              0.0,
+              0.5615060804490177
+            ]
+          },
+          "hit@3": {
+            "value": 0.6666666666666666,
+            "ci": [
+              0.2076549551264879,
+              0.9385096847238394
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.43849391955098227,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.5,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.3055555555555555,
+            "ci": [
+              0.25,
+              0.3333333333333333
+            ]
+          }
+        },
+        "factual": {
+          "n": 16,
+          "hit@1": {
+            "value": 0.75,
+            "ci": [
+              0.5050123107060135,
+              0.8981809801576265
+            ]
+          },
+          "hit@3": {
+            "value": 1.0,
+            "ci": [
+              0.8063865817272802,
+              1.0
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.8063865817272802,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.8541666666666666,
+            "ci": [
+              0.71875,
+              0.96875
+            ]
+          }
+        },
+        "lexical_mismatch": {
+          "n": 6,
+          "hit@1": {
+            "value": 0.6666666666666666,
+            "ci": [
+              0.29998832134152864,
+              0.9032306674407831
+            ]
+          },
+          "hit@3": {
+            "value": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "recall@5": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.6666666666666666,
+              1.0
+            ]
+          }
+        },
+        "multi_evidence": {
+          "n": 1,
+          "hit@1": {
+            "value": 1.0,
+            "ci": [
+              0.20654329147389294,
+              1.0
+            ]
+          },
+          "hit@3": {
+            "value": 1.0,
+            "ci": [
+              0.20654329147389294,
+              1.0
+            ]
+          },
+          "hit@5": {
+            "value": 1.0,
+            "ci": [
+              0.20654329147389294,
+              1.0
+            ]
+          },
+          "recall@5": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ]
+          },
+          "mrr@10": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ]
+          }
+        }
+      },
+      "per_question": [
+        {
+          "id": "q03",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_new.md#1",
+            "expense_old.md#2",
+            "expense_new.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q07",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_new.md#2",
+            "expense_new.md#1",
+            "expense_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q08",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "expense_old.md#2",
+            "old_process.md#2",
+            "refund_old.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q11",
+          "type": "change",
+          "first_gold_rank": 3,
+          "top_docs": [
+            "vendor_new.md#1",
+            "vendor_new.md#2",
+            "vendor_new.md#0"
+          ],
+          "rr": 0.3333333333333333,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 0.5,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q14",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "vendor_old.md#1",
+            "vendor_old.md#0",
+            "vendor_new.md#2"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q15",
+          "type": "factual",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "vendor_new.md#2",
+            "vendor_new.md#1",
+            "vendor_old.md#1"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q16",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "vendor_new.md#2",
+            "vendor_new.md#1",
+            "vendor_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q18",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_new.md#2",
+            "incident_old.md#2",
+            "incident_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q20",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "incident_old.md#1",
+            "incident_new.md#1",
+            "incident_new.md#2"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q21",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_new.md#1",
+            "incident_new.md#2",
+            "incident_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q22",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_old.md#2",
+            "incident_old.md#0",
+            "incident_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q24",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_old.md#0",
+            "incident_new.md#0",
+            "incident_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q26",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_old.md#1",
+            "refund_new.md#0",
+            "refund_old.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q27",
+          "type": "change",
+          "first_gold_rank": 4,
+          "top_docs": [
+            "refund_old.md#2",
+            "refund_new.md#0",
+            "refund_new.md#2"
+          ],
+          "rr": 0.25,
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 0.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q28",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_new.md#2",
+            "refund_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q29",
+          "type": "factual",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "refund_new.md#0",
+            "refund_new.md#1",
+            "refund_new.md#2"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q30",
+          "type": "factual",
+          "first_gold_rank": 3,
+          "top_docs": [
+            "refund_old.md#0",
+            "refund_new.md#2",
+            "refund_old.md#1"
+          ],
+          "rr": 0.3333333333333333,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q31",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 2,
+          "top_docs": [
+            "refund_old.md#1",
+            "refund_new.md#0",
+            "refund_old.md#0"
+          ],
+          "rr": 0.5,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q32",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "refund_new.md#1",
+            "refund_new.md#2",
+            "refund_old.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q34",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "company_policies.md#1",
+            "company_policies.md#0",
+            "new_process.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q35",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "company_policies.md#1",
+            "implementation_plan.md#1",
+            "implementation_plan.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q36",
+          "type": "change",
+          "first_gold_rank": 3,
+          "top_docs": [
+            "company_policies.md#1",
+            "old_process.md#2",
+            "new_process.md#1"
+          ],
+          "rr": 0.3333333333333333,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 0.5,
+          "recall@5": 0.5
+        },
+        {
+          "id": "q37",
+          "type": "factual",
+          "first_gold_rank": 3,
+          "top_docs": [
+            "new_process.md#2",
+            "new_process.md#0",
+            "implementation_plan.md#0"
+          ],
+          "rr": 0.3333333333333333,
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q39",
+          "type": "factual",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "implementation_plan.md#0",
+            "incident_new.md#2",
+            "new_process.md#1"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q40",
+          "type": "lexical_mismatch",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "old_process.md#2",
+            "old_process.md#1",
+            "old_process.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        },
+        {
+          "id": "q42",
+          "type": "multi_evidence",
+          "first_gold_rank": 1,
+          "top_docs": [
+            "incident_new.md#2",
+            "incident_new.md#1",
+            "incident_new.md#0"
+          ],
+          "rr": 1.0,
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0
+        }
+      ]
+    }
+  },
+  "paired_vs_tfidf": {
+    "tfidf_stem": {
+      "hit@1": {
+        "mean_diff": -0.038461538461538464,
+        "ci": [
+          -0.19230769230769232,
+          0.11538461538461539
+        ]
+      },
+      "hit@5": {
+        "mean_diff": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "rr": {
+        "mean_diff": -0.02884615384615385,
+        "ci": [
+          -0.12820512820512822,
+          0.0641025641025641
+        ]
+      }
+    },
+    "bm25": {
+      "hit@1": {
+        "mean_diff": 0.038461538461538464,
+        "ci": [
+          -0.07692307692307693,
+          0.15384615384615385
+        ]
+      },
+      "hit@5": {
+        "mean_diff": -0.038461538461538464,
+        "ci": [
+          -0.11538461538461539,
+          0.0
+        ]
+      },
+      "rr": {
+        "mean_diff": 0.010897435897435897,
+        "ci": [
+          -0.0532051282051282,
+          0.07692307692307693
+        ]
+      }
+    },
+    "bm25_stem": {
+      "hit@1": {
+        "mean_diff": 0.038461538461538464,
+        "ci": [
+          -0.11538461538461539,
+          0.19230769230769232
+        ]
+      },
+      "hit@5": {
+        "mean_diff": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "rr": {
+        "mean_diff": 0.01282051282051282,
+        "ci": [
+          -0.07371794871794872,
+          0.10256410256410256
+        ]
+      }
+    },
+    "embeddings": {
+      "hit@1": {
+        "mean_diff": 0.0,
+        "ci": [
+          -0.23076923076923078,
+          0.19230769230769232
+        ]
+      },
+      "hit@5": {
+        "mean_diff": 0.038461538461538464,
+        "ci": [
+          0.0,
+          0.11538461538461539
+        ]
+      },
+      "rr": {
+        "mean_diff": 0.009615384615384612,
+        "ci": [
+          -0.13141025641025642,
+          0.14423076923076922
+        ]
+      }
+    }
+  }
+}

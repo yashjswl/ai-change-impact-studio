@@ -33,8 +33,8 @@ export function DiffComparePage() {
         </CardHeader>
         <CardBody className="space-y-3">
           <p className="text-sm text-slate-500">
-            Retrieves relevant excerpts from uploaded documents (TF-IDF) and asks the model for a structured,
-            cited comparison. Every citation is verified against the retrieved source text.
+            Compares the uploaded documents and asks the model for a structured, cited comparison. Every
+            citation is verified against the text of the document it names.
           </p>
           <div className="flex gap-2">
             <input

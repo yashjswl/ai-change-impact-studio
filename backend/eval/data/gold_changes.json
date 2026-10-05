@@ -1,0 +1,78 @@
+{
+  "_rule": "A gold change is covered when at least ceil(0.6 * len(keywords)) of its keywords appear (case-insensitive substring) in the combined topic, old_state and new_state text of a single finding.",
+  "scenarios": [
+    {
+      "name": "onboarding",
+      "old_doc": "old_process.md",
+      "new_doc": "new_process.md",
+      "changes": [
+        {"id": "initiation", "keywords": ["email", "ats", "accepted"]},
+        {"id": "hris_entry", "keywords": ["manual", "hris", "api"]},
+        {"id": "digital_forms", "keywords": ["paper", "e-signature", "digital"]},
+        {"id": "it_provisioning", "keywords": ["provision", "ticket", "2 business days"]},
+        {"id": "compliance_training", "keywords": ["verbal", "lms", "automat"]},
+        {"id": "meeting_scheduling", "keywords": ["schedul", "calendar", "template"]},
+        {"id": "status_visibility", "keywords": ["dashboard", "status"]},
+        {"id": "finance_payroll", "keywords": ["payroll", "hris", "automat"]},
+        {"id": "exception_escalation", "keywords": ["escalat", "exception"]}
+      ]
+    },
+    {
+      "name": "expense",
+      "old_doc": "expense_old.md",
+      "new_doc": "expense_new.md",
+      "changes": [
+        {"id": "payment_timing", "keywords": ["payroll", "direct deposit"]},
+        {"id": "submission_method", "keywords": ["paper", "spendflow", "app"]},
+        {"id": "auto_approval", "keywords": ["auto", "$200", "approv"]},
+        {"id": "mileage", "keywords": ["mileage", "gps", "odometer"]},
+        {"id": "duplicate_controls", "keywords": ["duplicate", "sample", "audit"]},
+        {"id": "lost_receipts", "keywords": ["lost receipt", "affidavit", "attest"]},
+        {"id": "currency", "keywords": ["currency", "daily", "central bank"]},
+        {"id": "status_visibility", "keywords": ["status", "notification", "email"]}
+      ]
+    },
+    {
+      "name": "vendor",
+      "old_doc": "vendor_old.md",
+      "new_doc": "vendor_new.md",
+      "changes": [
+        {"id": "mechanism", "keywords": ["email", "portal"]},
+        {"id": "sanctions", "keywords": ["ofac", "complycheck", "nightly"]},
+        {"id": "bank_verification", "keywords": ["bank", "micro-deposit", "phon"]},
+        {"id": "risk_tiers", "keywords": ["tier", "25,000", "250,000"]},
+        {"id": "duplicates", "keywords": ["duplicate", "tax id", "140"]},
+        {"id": "contracts", "keywords": ["binder", "repository", "90 days"]},
+        {"id": "revalidation", "keywords": ["validat", "12 months", "annual"]}
+      ]
+    },
+    {
+      "name": "incident",
+      "old_doc": "incident_old.md",
+      "new_doc": "incident_new.md",
+      "changes": [
+        {"id": "detection", "keywords": ["phone tree", "pagerrelay", "monitor"]},
+        {"id": "severity", "keywords": ["major", "sev1", "severity"]},
+        {"id": "acknowledgement", "keywords": ["10 minutes", "5 minutes", "escalat"]},
+        {"id": "incident_commander", "keywords": ["incident commander", "rotat"]},
+        {"id": "communication", "keywords": ["status page", "30 minutes", "email"]},
+        {"id": "postmortem", "keywords": ["postmortem", "8 hours", "5 business days"]},
+        {"id": "on_call_pay", "keywords": ["stipend", "350"]}
+      ]
+    },
+    {
+      "name": "refund",
+      "old_doc": "refund_old.md",
+      "new_doc": "refund_new.md",
+      "changes": [
+        {"id": "channel", "keywords": ["email", "help center"]},
+        {"id": "thresholds", "keywords": ["$50", "$300", "$20", "$100"]},
+        {"id": "payout_cadence", "keywords": ["weekly", "daily"]},
+        {"id": "window", "keywords": ["14 days", "30 days"]},
+        {"id": "store_credit", "keywords": ["store credit", "bonus", "10%"]},
+        {"id": "fraud", "keywords": ["fraud", "1 in 20", "0.8"]},
+        {"id": "reason_codes", "keywords": ["reason code", "report"]}
+      ]
+    }
+  ]
+}

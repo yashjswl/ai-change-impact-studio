@@ -1,0 +1,1626 @@
+{
+  "summary": {
+    "model": "gemini-flash-lite-latest",
+    "date": "2026-10-05",
+    "context_mode": "retrieved",
+    "runs_attempted": 15,
+    "runs_failed": 0,
+    "mean_chunks_in_context": 2.8,
+    "mean_chunks_total": 6.2,
+    "mean_context_availability": 0.725,
+    "mean_findings": 3.933333333333333,
+    "mean_recall": 0.5197089947089947,
+    "per_scenario_recall": {
+      "onboarding": 0.9259259259259259,
+      "expense": 0.2916666666666667,
+      "vendor": 0.42857142857142855,
+      "incident": 0.4761904761904761,
+      "refund": 0.4761904761904761
+    },
+    "total_citations": 119,
+    "verified_rate_shipped": 0.957983193277311,
+    "verified_rate_current": 1.0,
+    "mean_latency_s": 2.8466666666666667
+  },
+  "runs": [
+    {
+      "scenario": "onboarding",
+      "n_findings": 8,
+      "chunks_in_context": 4,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 0.8888888888888888,
+      "covered": [
+        "initiation",
+        "hris_entry",
+        "digital_forms",
+        "it_provisioning",
+        "compliance_training",
+        "meeting_scheduling",
+        "status_visibility",
+        "finance_payroll"
+      ],
+      "missed": [
+        "exception_escalation"
+      ],
+      "latency_s": 5.0,
+      "findings": [
+        {
+          "topic": "Initiation of Onboarding",
+          "old_state": "Hiring manager emails HR a PDF offer summary, and HR manually creates a paper onboarding folder.",
+          "new_state": "Onboarding is initiated automatically the moment a hiring manager marks an offer as 'Accepted' in the Applicant Tracking System (ATS)."
+        },
+        {
+          "topic": "HRIS Data Entry",
+          "old_state": "HR manually enters the employee into the HRIS system by hand, typically 1-2 business days after the email.",
+          "new_state": "Marking the offer as Accepted automatically creates an employee record in the HRIS via API integration with no manual re-entry."
+        },
+        {
+          "topic": "Welcome Packet and Tax/Benefits Forms",
+          "old_state": "HR prints and mails a paper welcome packet, tax forms (W-4, I-9), and benefits enrollment forms to the employee's home address. The employee completes paper forms and returns them by mail or in person on day one.",
+          "new_state": "A system-generated digital welcome packet, e-signature tax forms (W-4, I-9), and benefits enrollment are sent to the employee's personal email and are due before day one."
+        },
+        {
+          "topic": "IT Notification and Provisioning",
+          "old_state": "IT is notified via a separate email from HR after HRIS entry, and an IT technician manually provisions access by following a printed checklist over 3-5 business days.",
+          "new_state": "An automated ticket is created in the IT provisioning system with role-based access templates, and a laptop is shipped."
+        },
+        {
+          "topic": "Form Filing and Re-keying",
+          "old_state": "HR manually files paper forms in a physical cabinet and re-keys selected fields into the HRIS and payroll systems.",
+          "new_state": "Paper forms and physical filing are eliminated."
+        },
+        {
+          "topic": "First-Week Meeting Scheduling",
+          "old_state": "The hiring manager manually schedules first-week meetings and shadowing sessions by emailing relevant team members individually.",
+          "new_state": "First-week meetings and shadowing sessions are auto-scheduled based on a role-based onboarding template and synced to calendars, with options for the hiring manager to customize."
+        },
+        {
+          "topic": "Compliance Training Tracking",
+          "old_state": "Compliance training is assigned verbally by the manager with no automated tracking of completion.",
+          "new_state": "There is a full audit trail of compliance training completion."
+        },
+        {
+          "topic": "Finance Setup and Handoff",
+          "old_state": "Finance receives new-hire payroll setup information manually from HR, often by walking a paper form to the Finance office.",
+          "new_state": "HR, IT, Finance, and the hiring manager all see the same real-time onboarding status dashboard."
+        }
+      ],
+      "n_citations": 16,
+      "verified_shipped": 16,
+      "verified_current": 16,
+      "citations": [
+        {
+          "source": "old_process.md",
+          "excerpt": "When a new employee is hired, the hiring manager emails HR a PDF offer summary. HR manually creates a paper onboarding folder and schedules a first-day meeting.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Onboarding is initiated automatically the moment a hiring manager marks an offer as \"Accepted\" in the Applicant Tracking System (ATS).",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR manually enters the employee into the HRIS system by hand (typically 1-2 business days after the email).",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "This automatically creates an employee record in the HRIS via API integration, no manual re-entry.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR prints and mails a paper welcome packet, tax forms (W-4, I-9), and benefits enrollment forms to the employee's home address.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "- **HR track:** system-generated digital welcome packet, e-signature tax forms (W-4, I-9) and benefits enrollment sent to the employee's personal email, due before day one.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "IT is notified via a separate email from HR, sent after the HRIS entry is complete, to provision a laptop, email account, and system access. Provisioning typically takes 3-5 business days and is done manually by an IT technician who follows a printed checklist.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "- **IT track:** automated ticket created in the IT provisioning system with role-based access templates; laptop shipped and acc",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR manually files the paper forms in a physical cabinet and re-keys selected fields into the HRIS and payroll systems.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "- Elimination of paper forms and physical filing.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "The hiring manager manually schedules first-week meetings and shadowing sessions by emailing relevant team members individually.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "rst-week meetings and shadowing sessions are auto-scheduled based on a role-based onboarding template and synced to calendars; the hiring manager can customize the template per new hire.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "Compliance training is assigned verbally by the manager; there is no automated tracking of completion.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "- Full audit trail of compliance training completion.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "Finance receives new-hire payroll setup information manually from HR, often by walking a paper form to the Finance office.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "HR, IT, Finance, and the hiring manager all see the same real-time onboarding status dashboard, eliminating status-check emails.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 1
+    },
+    {
+      "scenario": "onboarding",
+      "n_findings": 6,
+      "chunks_in_context": 4,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 1.0,
+      "covered": [
+        "initiation",
+        "hris_entry",
+        "digital_forms",
+        "it_provisioning",
+        "compliance_training",
+        "meeting_scheduling",
+        "status_visibility",
+        "finance_payroll",
+        "exception_escalation"
+      ],
+      "missed": [],
+      "latency_s": 4.1,
+      "findings": [
+        {
+          "topic": "Onboarding Initiation and HRIS Entry",
+          "old_state": "Hiring manager emails HR a PDF offer summary, and HR manually enters the employee into the HRIS system by hand 1-2 business days later.",
+          "new_state": "Onboarding is initiated automatically when the hiring manager marks an offer as 'Accepted' in the ATS, which automatically creates an employee record in the HRIS via API integration."
+        },
+        {
+          "topic": "Welcome Packet and Tax/Benefits Forms",
+          "old_state": "HR prints and mails a paper welcome packet, tax forms, and benefits enrollment forms to the employee's home address, which are returned by mail or in person on day one and filed manually in a physical cabinet.",
+          "new_state": "System-generated digital welcome packets, e-signature tax forms, and benefits enrollment forms are sent to the employee's personal email and are due before day one."
+        },
+        {
+          "topic": "IT Provisioning",
+          "old_state": "IT is notified via a separate email from HR after HRIS entry, taking 3-5 business days and performed manually using a printed checklist.",
+          "new_state": "An automated ticket is created in the IT provisioning system with role-based access templates, and a laptop is shipped."
+        },
+        {
+          "topic": "Scheduling First-Week Meetings",
+          "old_state": "The hiring manager manually schedules first-week meetings and shadowing sessions by emailing relevant team members individually.",
+          "new_state": "First-week meetings and shadowing sessions are auto-scheduled based on a role-based onboarding template and synced to calendars, with customization options available."
+        },
+        {
+          "topic": "Compliance Training Tracking",
+          "old_state": "Compliance training is assigned verbally by the manager with no automated tracking of completion.",
+          "new_state": "There is a full audit trail of compliance training completion."
+        },
+        {
+          "topic": "Status Tracking and Exception Handling",
+          "old_state": "Status tracking relies on status-check emails between departments, and missing documentation requires manual notice.",
+          "new_state": "HR, IT, Finance, and the hiring manager all see the same real-time onboarding status dashboard, and exceptions automatically escalate via the workflow engine."
+        }
+      ],
+      "n_citations": 12,
+      "verified_shipped": 10,
+      "verified_current": 12,
+      "citations": [
+        {
+          "source": "old_process.md",
+          "excerpt": "When a new employee is hired, the hiring manager emails HR a PDF offer summary. HR manually creates a paper onboarding folder and schedules a first-day meeting.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Onboarding is initiated automatically the moment a hiring manager marks an offer as \"Accepted\" in the Applicant Tracking System (ATS). A single onboarding workflow engine orchestrates HR, IT, and Finance tasks in parallel with a shared status dashboard.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR prints and mails a paper welcome packet, tax forms (W-4, I-9), and benefits enrollment forms to the employee's home address.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "HR track: system-generated digital welcome packet, e-signature tax forms (W-4, I-9) and benefits enrollment sent to the employee's personal email, due before day one.",
+          "shipped": false,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "IT is notified via a separate email from HR, sent after the HRIS entry is complete, to provision a laptop, email account, and system access. Provisioning typically takes 3-5 business days and is done manually by an IT technician who follows a printed checklist.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "IT track: automated ticket created in the IT provisioning system with role-based access templates; laptop shipped and acc",
+          "shipped": false,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "The hiring manager manually schedules first-week meetings and shadowing sessions by emailing relevant team members individually.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "rst-week meetings and shadowing sessions are auto-scheduled based on a role-based onboarding template and synced to calendars; the hiring manager can customize the template per new hire.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "Compliance training is assigned verbally by the manager; there is no automated tracking of completion.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Full audit trail of compliance training completion.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "HR, IT, Finance, and the hiring manager all see the same real-time onboarding status dashboard, eliminating status-check emails.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Any exceptions (e.g., missing I-9 documentation) automatically escalate to the responsible party via the workflow engine rather than relying on someone noticing.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 2
+    },
+    {
+      "scenario": "onboarding",
+      "n_findings": 7,
+      "chunks_in_context": 4,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 0.8888888888888888,
+      "covered": [
+        "initiation",
+        "hris_entry",
+        "digital_forms",
+        "it_provisioning",
+        "compliance_training",
+        "meeting_scheduling",
+        "status_visibility",
+        "finance_payroll"
+      ],
+      "missed": [
+        "exception_escalation"
+      ],
+      "latency_s": 4.9,
+      "findings": [
+        {
+          "topic": "Onboarding Initiation and HRIS Entry",
+          "old_state": "Hiring manager emails HR a PDF offer summary, and HR manually enters the employee into the HRIS system by hand.",
+          "new_state": "Onboarding is initiated automatically when the hiring manager marks an offer as Accepted in the ATS, which automatically creates an employee record in the HRIS via API integration."
+        },
+        {
+          "topic": "Welcome Packet and Tax/Benefits Forms",
+          "old_state": "HR prints and mails a paper welcome packet, tax forms, and benefits enrollment forms to the employee's home address.",
+          "new_state": "A system-generated digital welcome packet, e-signature tax forms (W-4, I-9) and benefits enrollment are sent to the employee's personal email."
+        },
+        {
+          "topic": "IT Provisioning and Setup",
+          "old_state": "IT is notified via a separate email sent after HRIS entry, and an IT technician follows a printed checklist to manually provision a laptop, email, and system access.",
+          "new_state": "An automated ticket is created in the IT provisioning system with role-based access templates, and a laptop is shipped."
+        },
+        {
+          "topic": "Form Return and Filing",
+          "old_state": "Employees complete paper forms and return them by mail or in person on day one; HR manually files them in a physical cabinet and re-keys selected fields into HRIS and payroll.",
+          "new_state": "Elimination of paper forms and physical filing."
+        },
+        {
+          "topic": "First-Week Meetings and Shadowing",
+          "old_state": "The hiring manager manually schedules first-week meetings and shadowing sessions by emailing relevant team members individually.",
+          "new_state": "First-week meetings and shadowing sessions are auto-scheduled based on a role-based onboarding template and synced to calendars."
+        },
+        {
+          "topic": "Compliance Training Tracking",
+          "old_state": "Compliance training is assigned verbally by the manager; there is no automated tracking of completion.",
+          "new_state": "Full audit trail of compliance training completion."
+        },
+        {
+          "topic": "Finance and Payroll Setup",
+          "old_state": "Finance receives new-hire payroll setup information manually from HR, often by walking a paper form to the Finance office.",
+          "new_state": "HR, IT, Finance, and the hiring manager all see the same real-time onboarding status dashboard."
+        }
+      ],
+      "n_citations": 17,
+      "verified_shipped": 15,
+      "verified_current": 17,
+      "citations": [
+        {
+          "source": "old_process.md",
+          "excerpt": "When a new employee is hired, the hiring manager emails HR a PDF offer summary. HR manually creates a paper onboarding folder and schedules a",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR manually enters the employee into the HRIS system by hand (typically",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Onboarding is initiated automatically the moment a hiring manager marks an offer as \"Accepted\" in the Applicant Tracking System (ATS).",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Hiring manager marks the offer as Accepted in the ATS. This automatically creates an employee record in the HRIS via API integration, no manual re-entry.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR prints and mails a paper welcome packet, tax forms (W-4, I-9), and benefits enrollment forms to the employee's home address.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "HR track: system-generated digital welcome packet, e-signature tax forms (W-4, I-9) and benefits enrollment sent to the employee's personal email, due before day one.",
+          "shipped": false,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "IT is notified via a separate email from HR, sent after the HRIS entry is complete, to provision a laptop, email account, and system access. Provisioning typically takes 3-5 business days and is done manually by an IT technician who follows a printed checklist.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "IT track: automated ticket created in the IT provisioning system with role-based access templates; laptop shipped and acc",
+          "shipped": false,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "The employee completes paper tax and benefits forms and returns them by mail",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR manually files the paper forms in a physical cabinet and re-keys selected fields into the HRIS and payroll systems.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Elimination of paper forms and physical filing.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "The hiring manager manually schedules first-week meetings and shadowing sessions by emailing relevant team members individually.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "rst-week meetings and shadowing sessions are auto-scheduled based on a role-based onboarding template and synced to calendars; the hiring manager can customize the template per new hire.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "Compliance training is assigned verbally by the manager; there is no automated tracking of completion.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Full audit trail of compliance training completion.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "Finance receives new-hire payroll setup information manually from HR, often by walking a paper form to the Finance office.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "HR, IT, Finance, and the hiring manager all see the same real-time onboarding status dashboard, eliminating status-check emails.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 3
+    },
+    {
+      "scenario": "expense",
+      "n_findings": 3,
+      "chunks_in_context": 3,
+      "chunks_total": 7,
+      "context_availability": 0.625,
+      "recall": 0.375,
+      "covered": [
+        "submission_method",
+        "auto_approval",
+        "duplicate_controls"
+      ],
+      "missed": [
+        "payment_timing",
+        "mileage",
+        "lost_receipts",
+        "currency",
+        "status_visibility"
+      ],
+      "latency_s": 2.5,
+      "findings": [
+        {
+          "topic": "Claim Submission and Processing",
+          "old_state": "Employees completed a paper Expense Claim Form (Form EX-12) by hand, stapled original receipts to the back, and sent it to Accounts Payable by interoffice mail.",
+          "new_state": "Expense claims are submitted, checked, approved, and paid inside the SpendFlow mobile and web app where employees photograph each receipt."
+        },
+        {
+          "topic": "Data Entry",
+          "old_state": "An Accounts Payable clerk checked the arithmetic on the form and keyed each line into the general ledger by hand.",
+          "new_state": "Accounts Payable no longer keys claims by hand and acts only on exceptions, while optical character recognition reads the amount, date, and vendor from photographed receipts."
+        },
+        {
+          "topic": "Audit and Sampling",
+          "old_state": "Finance conducted a quarterly 5% sample for review.",
+          "new_state": "Finance samples 2% of auto-approved claims each month for manual review."
+        }
+      ],
+      "n_citations": 5,
+      "verified_shipped": 5,
+      "verified_current": 5,
+      "citations": [
+        {
+          "source": "expense_old.md",
+          "excerpt": "The employee completes a paper Expense Claim Form (Form EX-12) by hand and staples the original receipts to the back of the form.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "Expense claims are now submitted, checked, approved and paid inside the SpendFlow mobile and web app.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "An AP clerk checks the arithmetic on the form and keys each line into the general ledger by hand.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "Accounts Payable (AP) no longer keys claims by hand and acts only on exceptions.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "Finance samples 2% of auto-approved claims each month for manual review, replacing the old quarterly 5% sample.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 1
+    },
+    {
+      "scenario": "expense",
+      "n_findings": 2,
+      "chunks_in_context": 3,
+      "chunks_total": 7,
+      "context_availability": 0.625,
+      "recall": 0.125,
+      "covered": [
+        "submission_method"
+      ],
+      "missed": [
+        "payment_timing",
+        "auto_approval",
+        "mileage",
+        "duplicate_controls",
+        "lost_receipts",
+        "currency",
+        "status_visibility"
+      ],
+      "latency_s": 1.9,
+      "findings": [
+        {
+          "topic": "Expense Claim Submission",
+          "old_state": "The employee completes a paper Expense Claim Form (Form EX-12) by hand and staples the original receipts to the back of the form.",
+          "new_state": "The employee photographs each receipt in the SpendFlow app. Optical character recognition reads the amount, date and vendor and fills in the claim line."
+        },
+        {
+          "topic": "Data Entry",
+          "old_state": "An AP clerk checks the arithmetic on the form and keys each line into the general ledger by hand. Mileage is calculated manually at $0.45 per mile us",
+          "new_state": "Accounts Payable (AP) no longer keys claims by hand and acts only on exceptions."
+        }
+      ],
+      "n_citations": 4,
+      "verified_shipped": 4,
+      "verified_current": 4,
+      "citations": [
+        {
+          "source": "expense_old.md",
+          "excerpt": "1. The employee completes a paper Expense Claim Form (Form EX-12) by hand and\n   staples the original receipts to the back of the form.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "1. The employee photographs each receipt in the SpendFlow app. Optical character\n   recognition reads the amount, date and vendor and fills in the claim line.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "4. An AP clerk checks the arithmetic on the form and keys each line into the\n   general ledger by hand. Mileage is calculated manually at $0.45 per mile us",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "Accounts Payable (AP) no longer keys claims by hand and acts\nonly on exceptions.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 2
+    },
+    {
+      "scenario": "expense",
+      "n_findings": 3,
+      "chunks_in_context": 3,
+      "chunks_total": 7,
+      "context_availability": 0.625,
+      "recall": 0.375,
+      "covered": [
+        "submission_method",
+        "auto_approval",
+        "duplicate_controls"
+      ],
+      "missed": [
+        "payment_timing",
+        "mileage",
+        "lost_receipts",
+        "currency",
+        "status_visibility"
+      ],
+      "latency_s": 2.4,
+      "findings": [
+        {
+          "topic": "Claim Submission Method",
+          "old_state": "Employees completed a paper Expense Claim Form by hand and stapled original receipts to the back.",
+          "new_state": "Employees photograph each receipt in the SpendFlow app, and optical character recognition fills in the claim line."
+        },
+        {
+          "topic": "Manager and Department Approvals",
+          "old_state": "The employee's line manager reviewed and signed all claims, with claims over $500 requiring a second signature from the department head.",
+          "new_state": "Claims under $200 with no policy flags are approved automatically with no manager involvement, while claims from $200 to $2,000 go to the line manager."
+        },
+        {
+          "topic": "Audit and Sampling",
+          "old_state": "Finance conducted a quarterly 5% sample for manual review.",
+          "new_state": "Finance samples 2% of auto-approved claims each month for manual review."
+        }
+      ],
+      "n_citations": 5,
+      "verified_shipped": 5,
+      "verified_current": 5,
+      "citations": [
+        {
+          "source": "expense_old.md",
+          "excerpt": "1. The employee completes a paper Expense Claim Form (Form EX-12) by hand and staples the original receipts to the back of the form.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "1. The employee photographs each receipt in the SpendFlow app. Optical character recognition reads the amount, date and vendor and fills in the claim line.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "2. The employee's line manager reviews the claim and signs the form. Claims over $500 also need a second signature from the department head.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "3. Claims under $200 with no policy flags are approved automatically with no manager involvement.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "Finance samples 2% of auto-approved claims each month for manual review, replacing the old quarterly 5% sample.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 3
+    },
+    {
+      "scenario": "vendor",
+      "n_findings": 4,
+      "chunks_in_context": 2,
+      "chunks_total": 6,
+      "context_availability": 0.42857142857142855,
+      "recall": 0.42857142857142855,
+      "covered": [
+        "mechanism",
+        "sanctions",
+        "bank_verification"
+      ],
+      "missed": [
+        "risk_tiers",
+        "duplicates",
+        "contracts",
+        "revalidation"
+      ],
+      "latency_s": 2.7,
+      "findings": [
+        {
+          "topic": "Onboarding Communication Method",
+          "old_state": "New suppliers are added through a chain of emails between the requesting team, Procurement and Finance.",
+          "new_state": "Vendors are onboarded through a self-service Vendor Portal. The portal replaces the email chain and the Vendor Master workbook, and it creates the supplier record in the ERP system directly through an API."
+        },
+        {
+          "topic": "Vendor List and Record Management",
+          "old_state": "The vendor list lives in a shared Excel workbook called Vendor Master, and there is no single system that records the state of a request.",
+          "new_state": "The portal replaces the email chain and the Vendor Master workbook, and it creates the supplier record in the ERP system directly through an API."
+        },
+        {
+          "topic": "Sanctions Screening",
+          "old_state": "The procurement officer checks the vendor against the sanctions list by searching the OFAC website by hand and saves a screenshot of the result.",
+          "new_state": "Sanctions screening runs automatically through ComplyCheck at the moment of submission, and every active vendor is screened again each night."
+        },
+        {
+          "topic": "Bank Detail Verification",
+          "old_state": "Bank details are verified by phoning the bank using the number printed on the bank letter.",
+          "new_state": "The bank account is verified with a micro-deposit test. The portal sends two small deposits and the vendor confirms the amounts, which normal"
+        }
+      ],
+      "n_citations": 8,
+      "verified_shipped": 8,
+      "verified_current": 8,
+      "citations": [
+        {
+          "source": "vendor_old.md",
+          "excerpt": "New suppliers are added through a chain of emails between the requesting team, Procurement and Finance.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Vendors are onboarded through a self-service Vendor Portal.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "The vendor list lives in a shared Excel workbook called Vendor Master, and there is no single system that records the state of a request.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The portal replaces the email chain and the Vendor Master workbook, and it creates the supplier record in the ERP system directly through an API.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "The procurement officer checks the vendor against the sanctions list by searching the OFAC website by hand and saves a screenshot of the result.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Sanctions screening runs automatically through ComplyCheck at the moment of submission, and every active vendor is screened again each night.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Bank details are verified by phoning the bank using the number printed on the bank letter.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The bank account is verified with a micro-deposit test. The portal sends two small deposits and the vendor confirms the amounts, which normal",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 1
+    },
+    {
+      "scenario": "vendor",
+      "n_findings": 4,
+      "chunks_in_context": 2,
+      "chunks_total": 6,
+      "context_availability": 0.42857142857142855,
+      "recall": 0.42857142857142855,
+      "covered": [
+        "mechanism",
+        "sanctions",
+        "bank_verification"
+      ],
+      "missed": [
+        "risk_tiers",
+        "duplicates",
+        "contracts",
+        "revalidation"
+      ],
+      "latency_s": 2.5,
+      "findings": [
+        {
+          "topic": "Onboarding Communication Method",
+          "old_state": "New suppliers are added through a chain of emails between the requesting team, Procurement and Finance.",
+          "new_state": "Vendors are onboarded through a self-service Vendor Portal. The portal replaces the email chain and the Vendor Master workbook"
+        },
+        {
+          "topic": "Vendor Data Management and System of Record",
+          "old_state": "The vendor list lives in a shared Excel workbook called Vendor Master, and there is no single system that records the state of a request.",
+          "new_state": "it creates the supplier record in the ERP system directly through an API."
+        },
+        {
+          "topic": "Sanctions Screening",
+          "old_state": "A procurement officer checks the vendor against the sanctions list by searching the OFAC website by hand and saves a screenshot of the result.",
+          "new_state": "Sanctions screening runs automatically through ComplyCheck at the moment of submission, and every active vendor is screened again each night."
+        },
+        {
+          "topic": "Bank Detail Verification",
+          "old_state": "Bank details are verified by phoning the bank using the number printed on the bank letter.",
+          "new_state": "The bank account is verified with a micro-deposit test. The portal sends two small deposits and the vendor confirms the amounts"
+        }
+      ],
+      "n_citations": 8,
+      "verified_shipped": 7,
+      "verified_current": 8,
+      "citations": [
+        {
+          "source": "vendor_old.md",
+          "excerpt": "New suppliers are added through a chain of emails between the requesting team, Procurement and Finance.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Vendors are onboarded through a self-service Vendor Portal. The portal replaces the email chain and the Vendor Master workbook",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "The vendor list lives in a shared Excel workbook called Vendor Master, and there is no single system that records the state of a request.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "it creates the supplier record in the ERP system directly through an API.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "A procurement officer checks the vendor against the sanctions list by searching the OFAC website by hand and saves a screenshot of the result.",
+          "shipped": false,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Sanctions screening runs automatically through ComplyCheck at the moment of submission, and every active vendor is screened again each night.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Bank details are verified by phoning the bank using the number printed on the bank letter.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The bank account is verified with a micro-deposit test. The portal sends two small deposits and the vendor confirms the amounts",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 2
+    },
+    {
+      "scenario": "vendor",
+      "n_findings": 3,
+      "chunks_in_context": 2,
+      "chunks_total": 6,
+      "context_availability": 0.42857142857142855,
+      "recall": 0.42857142857142855,
+      "covered": [
+        "mechanism",
+        "sanctions",
+        "bank_verification"
+      ],
+      "missed": [
+        "risk_tiers",
+        "duplicates",
+        "contracts",
+        "revalidation"
+      ],
+      "latency_s": 2.4,
+      "findings": [
+        {
+          "topic": "Onboarding Communication and Management",
+          "old_state": "New suppliers are added through a chain of emails between the requesting team, Procurement and Finance, and the vendor list lives in a shared Excel workbook called Vendor Master.",
+          "new_state": "Vendors are onboarded through a self-service Vendor Portal that replaces the email chain and the Vendor Master workbook, creating supplier records in the ERP system directly through an API."
+        },
+        {
+          "topic": "Sanctions Screening",
+          "old_state": "A procurement officer checks the vendor against the sanctions list by searching the OFAC website by hand and saves a screenshot of the result.",
+          "new_state": "Sanctions screening runs automatically through ComplyCheck at the moment of submission, and every active vendor is screened again each night."
+        },
+        {
+          "topic": "Bank Account Verification",
+          "old_state": "Bank details are verified by phoning the bank using the number printed on the bank letter.",
+          "new_state": "The bank account is verified with a micro-deposit test. The portal sends two small deposits and the vendor confirms the amounts"
+        }
+      ],
+      "n_citations": 6,
+      "verified_shipped": 6,
+      "verified_current": 6,
+      "citations": [
+        {
+          "source": "vendor_old.md",
+          "excerpt": "New suppliers are added through a chain of emails between the requesting team,\nProcurement and Finance. The vendor list lives in a shared Excel workbook called\nVendor Master, and there is no single system that records the state of a request.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Vendors are onboarded through a self-service Vendor Portal. The portal replaces\nthe email chain and the Vendor Master workbook, and it creates the supplier record\nin the ERP system directly through an API.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "The procurement officer checks the vendor against the sanctions list by\nsearching the OFAC website by hand and saves a screenshot of the result.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Sanctions screening runs automatically through ComplyCheck at the moment of\nsubmission, and every active vendor is screened again each night.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Bank details are verified by phoning the bank using the number printed on the\nbank letter.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The bank account is verified with a micro-deposit test. The portal sends two\nsmall deposits and the vendor confirms the amounts",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 3
+    },
+    {
+      "scenario": "incident",
+      "n_findings": 3,
+      "chunks_in_context": 2,
+      "chunks_total": 6,
+      "context_availability": 0.5714285714285714,
+      "recall": 0.42857142857142855,
+      "covered": [
+        "detection",
+        "severity",
+        "acknowledgement"
+      ],
+      "missed": [
+        "incident_commander",
+        "communication",
+        "postmortem",
+        "on_call_pay"
+      ],
+      "latency_s": 2.5,
+      "findings": [
+        {
+          "topic": "Incident Detection and Ticket Creation",
+          "old_state": "Anyone who notices an outage calls the service desk. Monitoring tools raise alarms on a wall display, but they do not create tickets.",
+          "new_state": "A monitoring alert creates an incident in PagerRelay with a proposed severity. There is no need to phone the service desk."
+        },
+        {
+          "topic": "Incident Classification",
+          "old_state": "The service desk agent logs a ticket by hand and classifies it as major or minor based on personal judgement, because there are no written severity definitions.",
+          "new_state": "Each level has a written definition so that two people classify the same issue the same way."
+        },
+        {
+          "topic": "Escalation and Paging",
+          "old_state": "For a major incident, the agent follows the printed phone tree and calls the on-call engineer's mobile phone. If there is no answer after 10 minutes, the agent calls the next engineer on the list.",
+          "new_state": "The on-call engineer is paged through the mobile app, then by SMS, then by phone call, until someone respond"
+        }
+      ],
+      "n_citations": 6,
+      "verified_shipped": 6,
+      "verified_current": 6,
+      "citations": [
+        {
+          "source": "incident_old.md",
+          "excerpt": "Anyone who notices an outage calls the service desk. Monitoring tools raise alarms on a wall display, but they do not create tickets.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "A monitoring alert creates an incident in PagerRelay with a proposed severity. There is no need to phone the service desk.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "The service desk agent logs a ticket by hand and classifies it as major or minor based on personal judgement, because there are no written severity definitions.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "Each level has a written definition so that two people classify the same issue the same way.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "For a major incident, the agent follows the printed phone tree and calls the on-call engineer's mobile phone. If there is no answer after 10 minutes, the agent calls the next engineer on the list.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "The on-call engineer is paged through the mobile app, then by SMS, then by phone call, until someone respond",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 1
+    },
+    {
+      "scenario": "incident",
+      "n_findings": 3,
+      "chunks_in_context": 2,
+      "chunks_total": 6,
+      "context_availability": 0.5714285714285714,
+      "recall": 0.42857142857142855,
+      "covered": [
+        "detection",
+        "severity",
+        "acknowledgement"
+      ],
+      "missed": [
+        "incident_commander",
+        "communication",
+        "postmortem",
+        "on_call_pay"
+      ],
+      "latency_s": 2.5,
+      "findings": [
+        {
+          "topic": "Incident Detection and Ticket Creation",
+          "old_state": "Anyone who notices an outage calls the service desk. Monitoring tools raise alarms on a wall display, but they do not create tickets.",
+          "new_state": "A monitoring alert creates an incident in PagerRelay with a proposed severity. There is no need to phone the service desk."
+        },
+        {
+          "topic": "Severity Classification",
+          "old_state": "The service desk agent logs a ticket by hand and classifies it as major or minor based on personal judgement, because there are no written severity definitions.",
+          "new_state": "SEV1 is a customer-facing outage or data loss. SEV2 is degraded service where customers are affected but can still work. SEV3 is a minor issue with no customer impact. Each level has a written definition so that two people classify the same issue the same way."
+        },
+        {
+          "topic": "Engineer Notification and Escalation",
+          "old_state": "For a major incident, the agent follows the printed phone tree and calls the on-call engineer's mobile phone. If there is no answer after 10 minutes, the agent calls the next engineer on the list.",
+          "new_state": "The on-call engineer is paged through the mobile app, then by SMS, then by phone call, until someone respond"
+        }
+      ],
+      "n_citations": 6,
+      "verified_shipped": 6,
+      "verified_current": 6,
+      "citations": [
+        {
+          "source": "incident_old.md",
+          "excerpt": "Anyone who notices an outage calls the service desk. Monitoring tools raise alarms on a wall display, but they do not create tickets.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "A monitoring alert creates an incident in PagerRelay with a proposed severity. There is no need to phone the service desk.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "The service desk agent logs a ticket by hand and classifies it as major or minor based on personal judgement, because there are no written severity definitions.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "SEV1 is a customer-facing outage or data loss.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "For a major incident, the agent follows the printed phone tree and calls the on-call engineer's mobile phone. If there is no answer after 10 minutes, the agent calls the next engineer on the list.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "The on-call engineer is paged through the mobile app, then by SMS, then by phone call, until someone respond",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 2
+    },
+    {
+      "scenario": "incident",
+      "n_findings": 3,
+      "chunks_in_context": 2,
+      "chunks_total": 6,
+      "context_availability": 0.5714285714285714,
+      "recall": 0.5714285714285714,
+      "covered": [
+        "detection",
+        "severity",
+        "acknowledgement",
+        "incident_commander"
+      ],
+      "missed": [
+        "communication",
+        "postmortem",
+        "on_call_pay"
+      ],
+      "latency_s": 2.5,
+      "findings": [
+        {
+          "topic": "Incident Creation and Detection",
+          "old_state": "Anyone who notices an outage calls the service desk. Monitoring tools raise alarms on a wall display, but they do not create tickets.",
+          "new_state": "Incidents are detected, escalated and tracked in PagerRelay. Monitoring alerts create incidents automatically, a rotating incident commander owns each serious incident, and every SEV1 and SEV2 ends with a written postmortem."
+        },
+        {
+          "topic": "Incident Classification and Severity Definitions",
+          "old_state": "The service desk agent logs a ticket by hand and classifies it as major or minor based on personal judgement, because there are no written severity definitions.",
+          "new_state": "Each level has a written definition so that two people classify the same issue the same way."
+        },
+        {
+          "topic": "Engineer Paging and Escalation",
+          "old_state": "For a major incident, the agent follows the printed phone tree and calls the on-call engineer's mobile phone. If there is no answer after 10 minutes, the agent calls the next engineer on the list.",
+          "new_state": "The on-call engineer is paged through the mobile app, then by SMS, then by phone call, until someone respond"
+        }
+      ],
+      "n_citations": 6,
+      "verified_shipped": 6,
+      "verified_current": 6,
+      "citations": [
+        {
+          "source": "incident_old.md",
+          "excerpt": "Anyone who notices an outage calls the service desk. Monitoring tools raise alarms on a wall display, but they do not create tickets.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "Monitoring alerts create incidents automatically, a rotating incident commander owns each serious incident, and every SEV1 and SEV2 ends with a written postmortem.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "The service desk agent logs a ticket by hand and classifies it as major or minor based on personal judgement, because there are no written severity definitions.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "Each level has a written definition so that two people classify the same issue the same way.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "For a major incident, the agent follows the printed phone tree and calls the on-call engineer's mobile phone. If there is no answer after 10 minutes, the agent calls the next engineer on the list.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "The on-call engineer is paged through the mobile app, then by SMS, then by phone call, until someone respond",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 3
+    },
+    {
+      "scenario": "refund",
+      "n_findings": 4,
+      "chunks_in_context": 3,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 0.5714285714285714,
+      "covered": [
+        "channel",
+        "thresholds",
+        "payout_cadence",
+        "window"
+      ],
+      "missed": [
+        "store_credit",
+        "fraud",
+        "reason_codes"
+      ],
+      "latency_s": 2.4,
+      "findings": [
+        {
+          "topic": "Refund Request Channel",
+          "old_state": "Customers requested refunds by emailing customer support.",
+          "new_state": "Customers request refunds in the self-service Help Center."
+        },
+        {
+          "topic": "Payout Schedule",
+          "old_state": "Finance pays refunds in a weekly batch every Thursday.",
+          "new_state": "Payouts run daily instead of weekly."
+        },
+        {
+          "topic": "Refund Window",
+          "old_state": "Refunds are accepted within 14 days of delivery.",
+          "new_state": "The order was delivered within 30 days (for instant approval criteria)."
+        },
+        {
+          "topic": "Approval Thresholds and Automation",
+          "old_state": "All requests handled manually by agents; refunds above $20 require team lead approval via chat, and above $100 require the support manager.",
+          "new_state": "Refunds under $50 are approved instantly based on criteria; $50 to $300 go to agents; above $300 needs support manager and fraud analyst."
+        }
+      ],
+      "n_citations": 8,
+      "verified_shipped": 8,
+      "verified_current": 8,
+      "citations": [
+        {
+          "source": "refund_old.md",
+          "excerpt": "1. The customer emails customer support to request a refund.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Customers request refunds in the self-service Help Center.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Finance pays refunds in a weekly batch.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Payouts run daily instead of weekly.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Refunds are accepted within 14 days of delivery.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "order was delivered within 30 days.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "A refund above $20 needs approval from a team lead, who is asked through a chat message. A refund above $100 also needs the support manager.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "A refund under $50 is approved instantly if the customer's refund rate over the past 12 months is below 10% and the order was delivered within 30 days.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 1
+    },
+    {
+      "scenario": "refund",
+      "n_findings": 4,
+      "chunks_in_context": 3,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 0.5714285714285714,
+      "covered": [
+        "channel",
+        "thresholds",
+        "payout_cadence",
+        "window"
+      ],
+      "missed": [
+        "store_credit",
+        "fraud",
+        "reason_codes"
+      ],
+      "latency_s": 2.7,
+      "findings": [
+        {
+          "topic": "Refund Request Method",
+          "old_state": "Customers requested refunds by emailing customer support.",
+          "new_state": "Customers request refunds in the self-service Help Center."
+        },
+        {
+          "topic": "Payout Schedule",
+          "old_state": "Finance pays refunds in a weekly batch every Thursday.",
+          "new_state": "Payouts run daily instead of weekly."
+        },
+        {
+          "topic": "Refund Window",
+          "old_state": "Refunds are accepted within 14 days of delivery.",
+          "new_state": "Refunds require the order was delivered within 30 days (for instant approval under $50)."
+        },
+        {
+          "topic": "Approval Thresholds and Tiers",
+          "old_state": "A refund above $20 needs approval from a team lead, and above $100 needs the support manager.",
+          "new_state": "Refunds under $50 are approved instantly based on criteria, $50 to $300 are routed to an agent, and above $300 need review by both the support manager and a fraud analyst."
+        }
+      ],
+      "n_citations": 8,
+      "verified_shipped": 8,
+      "verified_current": 8,
+      "citations": [
+        {
+          "source": "refund_old.md",
+          "excerpt": "1. The customer emails customer support to request a refund.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Customers request refunds in the self-service Help Center.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Finance pays refunds in a weekly batch.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Payouts run daily instead of weekly.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Refunds are accepted within 14 days of delivery.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "the order was delivered within 30 days.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "A refund above $20 needs approval from a team lead, who is asked through a chat message. A refund above $100 also needs the support manager.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "A refund under $50 is approved instantly if the customer's refund rate over the past 12 months is below 10% and the order was delivered within 30 days.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 2
+    },
+    {
+      "scenario": "refund",
+      "n_findings": 2,
+      "chunks_in_context": 3,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 0.2857142857142857,
+      "covered": [
+        "channel",
+        "payout_cadence"
+      ],
+      "missed": [
+        "thresholds",
+        "window",
+        "store_credit",
+        "fraud",
+        "reason_codes"
+      ],
+      "latency_s": 1.7,
+      "findings": [
+        {
+          "topic": "Refund Request Method",
+          "old_state": "Refund requests are handled one at a time by support agents through email.",
+          "new_state": "Customers request refunds in the self-service Help Center."
+        },
+        {
+          "topic": "Payout Frequency",
+          "old_state": "Finance pays refunds in a weekly batch.",
+          "new_state": "Payouts run daily instead of weekly."
+        }
+      ],
+      "n_citations": 4,
+      "verified_shipped": 4,
+      "verified_current": 4,
+      "citations": [
+        {
+          "source": "refund_old.md",
+          "excerpt": "Refund requests are handled one at a time by support agents through email.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Customers request refunds in the self-service Help Center.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Finance pays refunds in a weekly batch.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Payouts run daily instead of weekly.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 3
+    }
+  ],
+  "disagreements": [
+    {
+      "scenario": "onboarding",
+      "source": "new_process.md",
+      "excerpt": "HR track: system-generated digital welcome packet, e-signature tax forms (W-4, I-9) and benefits enrollment sent to the employee's personal email, due before day one.",
+      "shipped": false,
+      "current": true,
+      "note": null
+    },
+    {
+      "scenario": "onboarding",
+      "source": "new_process.md",
+      "excerpt": "IT track: automated ticket created in the IT provisioning system with role-based access templates; laptop shipped and acc",
+      "shipped": false,
+      "current": true,
+      "note": null
+    },
+    {
+      "scenario": "onboarding",
+      "source": "new_process.md",
+      "excerpt": "HR track: system-generated digital welcome packet, e-signature tax forms (W-4, I-9) and benefits enrollment sent to the employee's personal email, due before day one.",
+      "shipped": false,
+      "current": true,
+      "note": null
+    },
+    {
+      "scenario": "onboarding",
+      "source": "new_process.md",
+      "excerpt": "IT track: automated ticket created in the IT provisioning system with role-based access templates; laptop shipped and acc",
+      "shipped": false,
+      "current": true,
+      "note": null
+    },
+    {
+      "scenario": "vendor",
+      "source": "vendor_old.md",
+      "excerpt": "A procurement officer checks the vendor against the sanctions list by searching the OFAC website by hand and saves a screenshot of the result.",
+      "shipped": false,
+      "current": true,
+      "note": null
+    }
+  ],
+  "still_unverified": []
+}

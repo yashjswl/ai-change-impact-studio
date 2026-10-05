@@ -1,0 +1,819 @@
+{
+  "meta": {
+    "date": "2026-10-05",
+    "split": "dev",
+    "n_cases": 37,
+    "n_valid": 15,
+    "n_invalid": 22,
+    "production_threshold": 0.85
+  },
+  "verifiers": {
+    "contiguous_shipped": {
+      "at_production_threshold": {
+        "threshold": 0.85,
+        "confusion": {
+          "tp": 7,
+          "fp": 1,
+          "fn": 8,
+          "tn": 21
+        },
+        "precision": 0.875,
+        "recall": 0.4666666666666667,
+        "f1": 0.608695652173913,
+        "accuracy": 0.7567567567567568,
+        "accuracy_ci": [
+          0.5988239750929105,
+          0.8663879656733671
+        ],
+        "by_kind": {
+          "fabricated": {
+            "label": "invalid",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "marker_added": {
+            "label": "valid",
+            "n": 4,
+            "correct": 1,
+            "accuracy": 0.25,
+            "ci": [
+              0.045586062644636216,
+              0.6993639475573634
+            ]
+          },
+          "number_edit": {
+            "label": "invalid",
+            "n": 5,
+            "correct": 4,
+            "accuracy": 0.8,
+            "ci": [
+              0.3755282641185388,
+              0.9637768390302125
+            ]
+          },
+          "one_word_edit": {
+            "label": "valid",
+            "n": 5,
+            "correct": 0,
+            "accuracy": 0.0,
+            "ci": [
+              0.0,
+              0.43449149475208104
+            ]
+          },
+          "paraphrase": {
+            "label": "invalid",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "verbatim": {
+            "label": "valid",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "wrong_source": {
+            "label": "invalid",
+            "n": 5,
+            "correct": 5,
+            "accuracy": 1.0,
+            "ci": [
+              0.5655085052479191,
+              1.0
+            ]
+          }
+        },
+        "errors": [
+          {
+            "id": "c13",
+            "kind": "marker_added",
+            "label": "valid",
+            "predicted_valid": false
+          },
+          {
+            "id": "c15",
+            "kind": "marker_added",
+            "label": "valid",
+            "predicted_valid": false
+          },
+          {
+            "id": "c19",
+            "kind": "marker_added",
+            "label": "valid",
+            "predicted_valid": false
+          },
+          {
+            "id": "c21",
+            "kind": "one_word_edit",
+            "label": "valid",
+            "predicted_valid": false
+          },
+          {
+            "id": "c23",
+            "kind": "one_word_edit",
+            "label": "valid",
+            "predicted_valid": false
+          },
+          {
+            "id": "c25",
+            "kind": "one_word_edit",
+            "label": "valid",
+            "predicted_valid": false
+          },
+          {
+            "id": "c27",
+            "kind": "one_word_edit",
+            "label": "valid",
+            "predicted_valid": false
+          },
+          {
+            "id": "c29",
+            "kind": "one_word_edit",
+            "label": "valid",
+            "predicted_valid": false
+          },
+          {
+            "id": "c71",
+            "kind": "number_edit",
+            "label": "invalid",
+            "predicted_valid": true
+          }
+        ]
+      },
+      "sweep": [
+        {
+          "threshold": 0.5,
+          "precision": 0.9,
+          "recall": 0.6,
+          "f1": 0.7200000000000001,
+          "accuracy": 0.8108108108108109
+        },
+        {
+          "threshold": 0.55,
+          "precision": 0.9,
+          "recall": 0.6,
+          "f1": 0.7200000000000001,
+          "accuracy": 0.8108108108108109
+        },
+        {
+          "threshold": 0.6,
+          "precision": 0.9,
+          "recall": 0.6,
+          "f1": 0.7200000000000001,
+          "accuracy": 0.8108108108108109
+        },
+        {
+          "threshold": 0.65,
+          "precision": 0.8888888888888888,
+          "recall": 0.5333333333333333,
+          "f1": 0.6666666666666667,
+          "accuracy": 0.7837837837837838
+        },
+        {
+          "threshold": 0.7,
+          "precision": 0.8888888888888888,
+          "recall": 0.5333333333333333,
+          "f1": 0.6666666666666667,
+          "accuracy": 0.7837837837837838
+        },
+        {
+          "threshold": 0.75,
+          "precision": 0.8888888888888888,
+          "recall": 0.5333333333333333,
+          "f1": 0.6666666666666667,
+          "accuracy": 0.7837837837837838
+        },
+        {
+          "threshold": 0.8,
+          "precision": 0.8888888888888888,
+          "recall": 0.5333333333333333,
+          "f1": 0.6666666666666667,
+          "accuracy": 0.7837837837837838
+        },
+        {
+          "threshold": 0.85,
+          "precision": 0.875,
+          "recall": 0.4666666666666667,
+          "f1": 0.608695652173913,
+          "accuracy": 0.7567567567567568
+        },
+        {
+          "threshold": 0.9,
+          "precision": 1.0,
+          "recall": 0.4666666666666667,
+          "f1": 0.6363636363636364,
+          "accuracy": 0.7837837837837838
+        },
+        {
+          "threshold": 0.95,
+          "precision": 1.0,
+          "recall": 0.4666666666666667,
+          "f1": 0.6363636363636364,
+          "accuracy": 0.7837837837837838
+        },
+        {
+          "threshold": 1.0,
+          "precision": 1.0,
+          "recall": 0.4,
+          "f1": 0.5714285714285715,
+          "accuracy": 0.7567567567567568
+        }
+      ]
+    },
+    "contiguous_autojunk_off": {
+      "at_production_threshold": {
+        "threshold": 0.85,
+        "confusion": {
+          "tp": 10,
+          "fp": 1,
+          "fn": 5,
+          "tn": 21
+        },
+        "precision": 0.9090909090909091,
+        "recall": 0.6666666666666666,
+        "f1": 0.7692307692307692,
+        "accuracy": 0.8378378378378378,
+        "accuracy_ci": [
+          0.6886320070454415,
+          0.923488967647029
+        ],
+        "by_kind": {
+          "fabricated": {
+            "label": "invalid",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "marker_added": {
+            "label": "valid",
+            "n": 4,
+            "correct": 4,
+            "accuracy": 1.0,
+            "ci": [
+              0.5100999795960008,
+              1.0
+            ]
+          },
+          "number_edit": {
+            "label": "invalid",
+            "n": 5,
+            "correct": 4,
+            "accuracy": 0.8,
+            "ci": [
+              0.3755282641185388,
+              0.9637768390302125
+            ]
+          },
+          "one_word_edit": {
+            "label": "valid",
+            "n": 5,
+            "correct": 0,
+            "accuracy": 0.0,
+            "ci": [
+              0.0,
+              0.43449149475208104
+            ]
+          },
+          "paraphrase": {
+            "label": "invalid",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "verbatim": {
+            "label": "valid",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "wrong_source": {
+            "label": "invalid",
+            "n": 5,
+            "correct": 5,
+            "accuracy": 1.0,
+            "ci": [
+              0.5655085052479191,
+              1.0
+            ]
+          }
+        },
+        "errors": [
+          {
+            "id": "c21",
+            "kind": "one_word_edit",
+            "label": "valid",
+            "predicted_valid": false
+          },
+          {
+            "id": "c23",
+            "kind": "one_word_edit",
+            "label": "valid",
+            "predicted_valid": false
+          },
+          {
+            "id": "c25",
+            "kind": "one_word_edit",
+            "label": "valid",
+            "predicted_valid": false
+          },
+          {
+            "id": "c27",
+            "kind": "one_word_edit",
+            "label": "valid",
+            "predicted_valid": false
+          },
+          {
+            "id": "c29",
+            "kind": "one_word_edit",
+            "label": "valid",
+            "predicted_valid": false
+          },
+          {
+            "id": "c71",
+            "kind": "number_edit",
+            "label": "invalid",
+            "predicted_valid": true
+          }
+        ]
+      },
+      "sweep": [
+        {
+          "threshold": 0.5,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "accuracy": 0.8648648648648649
+        },
+        {
+          "threshold": 0.55,
+          "precision": 0.7368421052631579,
+          "recall": 0.9333333333333333,
+          "f1": 0.8235294117647058,
+          "accuracy": 0.8378378378378378
+        },
+        {
+          "threshold": 0.6,
+          "precision": 0.7777777777777778,
+          "recall": 0.9333333333333333,
+          "f1": 0.8484848484848485,
+          "accuracy": 0.8648648648648649
+        },
+        {
+          "threshold": 0.65,
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8000000000000002,
+          "accuracy": 0.8378378378378378
+        },
+        {
+          "threshold": 0.7,
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8000000000000002,
+          "accuracy": 0.8378378378378378
+        },
+        {
+          "threshold": 0.75,
+          "precision": 0.8571428571428571,
+          "recall": 0.8,
+          "f1": 0.8275862068965518,
+          "accuracy": 0.8648648648648649
+        },
+        {
+          "threshold": 0.8,
+          "precision": 0.9230769230769231,
+          "recall": 0.8,
+          "f1": 0.8571428571428571,
+          "accuracy": 0.8918918918918919
+        },
+        {
+          "threshold": 0.85,
+          "precision": 0.9090909090909091,
+          "recall": 0.6666666666666666,
+          "f1": 0.7692307692307692,
+          "accuracy": 0.8378378378378378
+        },
+        {
+          "threshold": 0.9,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "accuracy": 0.8648648648648649
+        },
+        {
+          "threshold": 0.95,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "accuracy": 0.8648648648648649
+        },
+        {
+          "threshold": 1.0,
+          "precision": 1.0,
+          "recall": 0.4,
+          "f1": 0.5714285714285715,
+          "accuracy": 0.7567567567567568
+        }
+      ]
+    },
+    "token_window_lenient": {
+      "at_production_threshold": {
+        "threshold": 0.85,
+        "confusion": {
+          "tp": 15,
+          "fp": 5,
+          "fn": 0,
+          "tn": 17
+        },
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571428571428571,
+        "accuracy": 0.8648648648648649,
+        "accuracy_ci": [
+          0.7202227252929444,
+          0.9408679273749238
+        ],
+        "by_kind": {
+          "fabricated": {
+            "label": "invalid",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "marker_added": {
+            "label": "valid",
+            "n": 4,
+            "correct": 4,
+            "accuracy": 1.0,
+            "ci": [
+              0.5100999795960008,
+              1.0
+            ]
+          },
+          "number_edit": {
+            "label": "invalid",
+            "n": 5,
+            "correct": 0,
+            "accuracy": 0.0,
+            "ci": [
+              0.0,
+              0.43449149475208104
+            ]
+          },
+          "one_word_edit": {
+            "label": "valid",
+            "n": 5,
+            "correct": 5,
+            "accuracy": 1.0,
+            "ci": [
+              0.5655085052479191,
+              1.0
+            ]
+          },
+          "paraphrase": {
+            "label": "invalid",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "verbatim": {
+            "label": "valid",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "wrong_source": {
+            "label": "invalid",
+            "n": 5,
+            "correct": 5,
+            "accuracy": 1.0,
+            "ci": [
+              0.5655085052479191,
+              1.0
+            ]
+          }
+        },
+        "errors": [
+          {
+            "id": "c65",
+            "kind": "number_edit",
+            "label": "invalid",
+            "predicted_valid": true
+          },
+          {
+            "id": "c67",
+            "kind": "number_edit",
+            "label": "invalid",
+            "predicted_valid": true
+          },
+          {
+            "id": "c69",
+            "kind": "number_edit",
+            "label": "invalid",
+            "predicted_valid": true
+          },
+          {
+            "id": "c71",
+            "kind": "number_edit",
+            "label": "invalid",
+            "predicted_valid": true
+          },
+          {
+            "id": "c73",
+            "kind": "number_edit",
+            "label": "invalid",
+            "predicted_valid": true
+          }
+        ]
+      },
+      "sweep": [
+        {
+          "threshold": 0.5,
+          "precision": 0.7142857142857143,
+          "recall": 1.0,
+          "f1": 0.8333333333333333,
+          "accuracy": 0.8378378378378378
+        },
+        {
+          "threshold": 0.55,
+          "precision": 0.7142857142857143,
+          "recall": 1.0,
+          "f1": 0.8333333333333333,
+          "accuracy": 0.8378378378378378
+        },
+        {
+          "threshold": 0.6,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "accuracy": 0.8648648648648649
+        },
+        {
+          "threshold": 0.65,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "accuracy": 0.8648648648648649
+        },
+        {
+          "threshold": 0.7,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "accuracy": 0.8648648648648649
+        },
+        {
+          "threshold": 0.75,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "accuracy": 0.8648648648648649
+        },
+        {
+          "threshold": 0.8,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "accuracy": 0.8648648648648649
+        },
+        {
+          "threshold": 0.85,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "accuracy": 0.8648648648648649
+        },
+        {
+          "threshold": 0.9,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571,
+          "accuracy": 0.8648648648648649
+        },
+        {
+          "threshold": 0.95,
+          "precision": 0.8571428571428571,
+          "recall": 0.8,
+          "f1": 0.8275862068965518,
+          "accuracy": 0.8648648648648649
+        },
+        {
+          "threshold": 1.0,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "accuracy": 0.8648648648648649
+        }
+      ]
+    },
+    "token_window": {
+      "at_production_threshold": {
+        "threshold": 0.85,
+        "confusion": {
+          "tp": 15,
+          "fp": 0,
+          "fn": 0,
+          "tn": 22
+        },
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "accuracy": 1.0,
+        "accuracy_ci": [
+          0.9059390425448564,
+          1.0
+        ],
+        "by_kind": {
+          "fabricated": {
+            "label": "invalid",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "marker_added": {
+            "label": "valid",
+            "n": 4,
+            "correct": 4,
+            "accuracy": 1.0,
+            "ci": [
+              0.5100999795960008,
+              1.0
+            ]
+          },
+          "number_edit": {
+            "label": "invalid",
+            "n": 5,
+            "correct": 5,
+            "accuracy": 1.0,
+            "ci": [
+              0.5655085052479191,
+              1.0
+            ]
+          },
+          "one_word_edit": {
+            "label": "valid",
+            "n": 5,
+            "correct": 5,
+            "accuracy": 1.0,
+            "ci": [
+              0.5655085052479191,
+              1.0
+            ]
+          },
+          "paraphrase": {
+            "label": "invalid",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "verbatim": {
+            "label": "valid",
+            "n": 6,
+            "correct": 6,
+            "accuracy": 1.0,
+            "ci": [
+              0.6096569663469354,
+              0.9999999999999999
+            ]
+          },
+          "wrong_source": {
+            "label": "invalid",
+            "n": 5,
+            "correct": 5,
+            "accuracy": 1.0,
+            "ci": [
+              0.5655085052479191,
+              1.0
+            ]
+          }
+        },
+        "errors": []
+      },
+      "sweep": [
+        {
+          "threshold": 0.5,
+          "precision": 0.9375,
+          "recall": 1.0,
+          "f1": 0.967741935483871,
+          "accuracy": 0.972972972972973
+        },
+        {
+          "threshold": 0.55,
+          "precision": 0.9375,
+          "recall": 1.0,
+          "f1": 0.967741935483871,
+          "accuracy": 0.972972972972973
+        },
+        {
+          "threshold": 0.6,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "accuracy": 1.0
+        },
+        {
+          "threshold": 0.65,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "accuracy": 1.0
+        },
+        {
+          "threshold": 0.7,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "accuracy": 1.0
+        },
+        {
+          "threshold": 0.75,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "accuracy": 1.0
+        },
+        {
+          "threshold": 0.8,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "accuracy": 1.0
+        },
+        {
+          "threshold": 0.85,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "accuracy": 1.0
+        },
+        {
+          "threshold": 0.9,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "accuracy": 1.0
+        },
+        {
+          "threshold": 0.95,
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.888888888888889,
+          "accuracy": 0.918918918918919
+        },
+        {
+          "threshold": 1.0,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8,
+          "accuracy": 0.8648648648648649
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,2868 @@
+{
+  "summary": {
+    "model": "gemini-flash-lite-latest",
+    "date": "2026-10-05",
+    "context_mode": "full",
+    "runs_attempted": 15,
+    "runs_failed": 0,
+    "mean_chunks_in_context": 6.2,
+    "mean_chunks_total": 6.2,
+    "mean_context_availability": 1.0,
+    "mean_findings": 7.733333333333333,
+    "mean_recall": 0.9253968253968254,
+    "per_scenario_recall": {
+      "onboarding": 0.8888888888888888,
+      "expense": 0.8333333333333334,
+      "vendor": 1.0,
+      "incident": 1.0,
+      "refund": 0.9047619047619048
+    },
+    "total_citations": 252,
+    "verified_rate_shipped": 0.9642857142857143,
+    "verified_rate_current": 0.9841269841269841,
+    "mean_latency_s": 5.153333333333333
+  },
+  "runs": [
+    {
+      "scenario": "onboarding",
+      "n_findings": 8,
+      "chunks_in_context": 6,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 0.8888888888888888,
+      "covered": [
+        "initiation",
+        "hris_entry",
+        "digital_forms",
+        "it_provisioning",
+        "compliance_training",
+        "meeting_scheduling",
+        "status_visibility",
+        "finance_payroll"
+      ],
+      "missed": [
+        "exception_escalation"
+      ],
+      "latency_s": 5.3,
+      "findings": [
+        {
+          "topic": "Onboarding Initiation and HRIS Entry",
+          "old_state": "Hiring manager emails HR a PDF offer summary, and HR manually enters the employee into the HRIS system by hand 1-2 business days after the email.",
+          "new_state": "Hiring manager marks the offer as Accepted in the ATS, which automatically creates an employee record in the HRIS via API integration with no manual re-entry."
+        },
+        {
+          "topic": "Welcome Packet and Tax/Benefits Forms",
+          "old_state": "HR prints and mails a paper welcome packet, tax forms (W-4, I-9), and benefits enrollment forms to the employee's home address, and the employee completes and returns them by mail or in person on day one.",
+          "new_state": "System-generated digital welcome packet, e-signature tax forms (W-4, I-9), and benefits enrollment are sent to the employee's personal email and completed digitally via e-signature before their start date."
+        },
+        {
+          "topic": "IT Provisioning",
+          "old_state": "IT is notified via a separate email from HR after HRIS entry, and an IT technician manually provisions a laptop, email account, and system access following a printed checklist within 3-5 business days.",
+          "new_state": "An automated ticket is created in the IT provisioning system with role-based access templates, and laptops are shipped and accounts provisioned within 2 business days, tracked to completion in the dashboard."
+        },
+        {
+          "topic": "Form Filing and Data Management",
+          "old_state": "HR manually files paper forms in a physical cabinet and re-keys selected fields into the HRIS and payroll systems.",
+          "new_state": "Digital forms are stored directly in the document management system with no physical filing and no re-keying."
+        },
+        {
+          "topic": "Compliance Training",
+          "old_state": "Compliance training is assigned verbally by the manager with no automated tracking of completion, creating audit risk.",
+          "new_state": "Compliance training is auto-assigned in the Learning Management System (LMS) with due dates, automated reminders, and completion tracked and reportable for audit purposes."
+        },
+        {
+          "topic": "First-Week Meetings and Scheduling",
+          "old_state": "The hiring manager manually schedules first-week meetings and shadowing sessions by emailing relevant team members individually.",
+          "new_state": "First-week meetings and shadowing sessions are auto-scheduled based on a role-based onboarding template and synced to calendars, with options for the hiring manager to customize the template."
+        },
+        {
+          "topic": "Payroll and Finance Setup",
+          "old_state": "Finance receives new-hire payroll setup information manually from HR, often by walking a paper form to the Finance office.",
+          "new_state": "A payroll setup record is created automatically from the HRIS entry with no manual form walked to Finance."
+        },
+        {
+          "topic": "Visibility and System of Record",
+          "old_state": "There is no single system of record; HR, IT, and Finance each track onboarding status separately with no shared visibility.",
+          "new_state": "HR, IT, Finance, and the hiring manager all see the same real-time onboarding status dashboard serving as a single shared source of truth."
+        }
+      ],
+      "n_citations": 16,
+      "verified_shipped": 13,
+      "verified_current": 16,
+      "citations": [
+        {
+          "source": "old_process.md",
+          "excerpt": "When a new employee is hired, the hiring manager emails HR a PDF offer summary. HR manually creates a paper onboarding folder and schedules a\nfirst-day meeting.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Hiring manager marks the offer as Accepted in the ATS. This automatically\ncreates an employee record in the HRIS via API integration, no manual\nre-entry.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR prints and mails a paper welcome packet, tax forms (W-4, I-9), and\nbenefits enrollment forms to the employee's home address.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "HR track: system-generated digital welcome packet, e-signature tax\nforms (W-4, I-9) and benefits enrollment sent to the employee's\npersonal email, due before day one.",
+          "shipped": false,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "IT is notified via a separate email from HR, sent after the HRIS entry is\ncomplete, to provision a laptop, email account, and system access.\nProvisioning typically takes 3-5 business days and is done manually by an\nIT technician who follows a printed checklist.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "IT track: automated ticket created in the IT provisioning system\nwith role-based access templates; laptop shipped and accounts\nprovisioned within 2 business days, tracked to completion in the\ndashboard.",
+          "shipped": false,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR manually files the paper forms in a physical cabinet and re-keys\nselected fields into the HRIS and payroll systems.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Employee completes all forms digitally via e-signature before their start\ndate; digital forms are stored directly in the document management\nsystem (no physical filing, no re-keying).",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "Compliance training is assigned verbally by the manager; there is no\nautomated tracking of completion.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Compliance training is auto-assigned in the Learning Management System\n(LMS) with due dates and automated reminders; completion is tracked and\nreportable for audit purposes.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "The hiring manager manually schedules first-week meetings and shadowing\nsessions by emailing relevant team members individually.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "First-week meetings and shadowing sessions are auto-scheduled based on a\nrole-based onboarding template and synced to calendars; the hiring\nmanager can customize the template per new hire.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "Finance receives new-hire payroll setup information manually from HR,\noften by walking a paper form to the Finance office.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Finance track: payroll setup record created automatically from the\nHRIS entry; no manual form walked to Finance.",
+          "shipped": false,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "No single system of record; HR, IT, and Finance each track onboarding\nstatus separately with no shared visibility.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "HR, IT, Finance, and the hiring manager all see the same real-time\nonboarding status dashboard, eliminating status-check emails.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 1
+    },
+    {
+      "scenario": "onboarding",
+      "n_findings": 9,
+      "chunks_in_context": 6,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 0.8888888888888888,
+      "covered": [
+        "initiation",
+        "hris_entry",
+        "digital_forms",
+        "it_provisioning",
+        "compliance_training",
+        "meeting_scheduling",
+        "status_visibility",
+        "finance_payroll"
+      ],
+      "missed": [
+        "exception_escalation"
+      ],
+      "latency_s": 5.4,
+      "findings": [
+        {
+          "topic": "Initiation of Onboarding",
+          "old_state": "Hiring manager emails HR a PDF offer summary.",
+          "new_state": "Onboarding is initiated automatically when a hiring manager marks an offer as \"Accepted\" in the Applicant Tracking System (ATS)."
+        },
+        {
+          "topic": "HRIS Entry",
+          "old_state": "HR manually enters the employee into the HRIS system by hand (typically 1-2 business days after the email).",
+          "new_state": "Marking the offer as Accepted automatically creates an employee record in the HRIS via API integration with no manual re-entry."
+        },
+        {
+          "topic": "Welcome Packet and Forms Distribution",
+          "old_state": "HR prints and mails a paper welcome packet, tax forms (W-4, I-9), and benefits enrollment forms to the employee's home address.",
+          "new_state": "System-generated digital welcome packet, e-signature tax forms (W-4, I-9) and benefits enrollment are sent to the employee's personal email."
+        },
+        {
+          "topic": "IT Provisioning and Access",
+          "old_state": "IT is notified via a separate email from HR after HRIS entry. Provisioning takes 3-5 business days and is done manually by an IT technician following a printed checklist.",
+          "new_state": "An automated ticket is created in the IT provisioning system with role-based access templates, and accounts are provisioned within 2 business days."
+        },
+        {
+          "topic": "Form Completion and Filing",
+          "old_state": "The employee completes paper tax and benefits forms and returns them by mail or in person on day one. HR manually files the paper forms in a physical cabinet and re-keys selected fields into systems.",
+          "new_state": "The employee completes all forms digitally via e-signature before their start date, and digital forms are stored directly in the document management system with no physical filing or re-keying."
+        },
+        {
+          "topic": "Compliance Training",
+          "old_state": "Compliance training is assigned verbally by the manager with no automated tracking of completion.",
+          "new_state": "Compliance training is auto-assigned in the Learning Management System (LMS) with due dates and automated reminders, and completion is tracked for audit purposes."
+        },
+        {
+          "topic": "Finance and Payroll Setup",
+          "old_state": "Finance receives new-hire payroll setup information manually from HR, often by walking a paper form to the Finance office.",
+          "new_state": "A payroll setup record is created automatically from the HRIS entry with no manual form walked to Finance."
+        },
+        {
+          "topic": "Meeting and Shadowing Scheduling",
+          "old_state": "The hiring manager manually schedules first-week meetings and shadowing sessions by emailing relevant team members individually.",
+          "new_state": "First-week meetings and shadowing sessions are auto-scheduled based on a role-based onboarding template and synced to calendars."
+        },
+        {
+          "topic": "Visibility and Tracking",
+          "old_state": "No single system of record; HR, IT, and Finance each track onboarding status separately with no shared visibility.",
+          "new_state": "HR, IT, Finance, and the hiring manager all see the same real-time onboarding status dashboard."
+        }
+      ],
+      "n_citations": 18,
+      "verified_shipped": 18,
+      "verified_current": 18,
+      "citations": [
+        {
+          "source": "old_process.md",
+          "excerpt": "When a new employee is hired, the hiring manager emails HR a PDF offer\nsummary.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Onboarding is initiated automatically the moment a hiring manager marks an\noffer as \"Accepted\" in the Applicant Tracking System (ATS).",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR manually enters the employee into the HRIS system by hand (typically\n   1-2 business days after the email).",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "This automatically\n   creates an employee record in the HRIS via API integration, no manual\n   re-entry.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR prints and mails a paper welcome packet, tax forms (W-4, I-9), and\n   benefits enrollment forms to the employee's home address.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "- **HR track:** system-generated digital welcome packet, e-signature tax\n     forms (W-4, I-9) and benefits enrollment sent to the employee's\n     personal email, due before day one.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "IT is notified via a separate email from HR, sent after the HRIS entry is\n   complete, to provision a laptop, email account, and system access.\n   Provisioning typically takes 3-5 business days and is done manually by an\n   IT technician who follows a printed checklist.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "- **IT track:** automated ticket created in the IT provisioning system\n     with role-based access templates; laptop shipped and accounts\n     provisioned within 2 business days, tracked to completion in the\n     dashboard.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "5. The employee completes paper tax and benefits forms and returns them by\n   mail or in person on day one.\n6. HR manually files the paper forms in a physical cabinet and re-keys\n   selected fields into the HRIS and payroll systems.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "3. Employee completes all forms digitally via e-signature before their start\n   date; digital forms are stored directly in the document management\n   system (no physical filing, no re-keying).",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "8. Compliance training is assigned verbally by the manager; there is no\n   automated tracking of completion.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "4. Compliance training is auto-assigned in the Learning Management System\n   (LMS) with due dates and automated reminders; completion is tracked and\n   reportable for audit purposes.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "9. Finance receives new-hire payroll setup information manually from HR,\n   often by walking a paper form to the Finance office.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "- **Finance track:** payroll setup record created automatically from the\n     HRIS entry; no manual form walked to Finance.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "7. The hiring manager manually schedules first-week meetings and shadowing\n   sessions by emailing relevant team members individually.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "5. First-week meetings and shadowing sessions are auto-scheduled based on a\n   role-based onboarding template and synced to calendars; the hiring\n   manager can customize the template per new hire.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "- No single system of record; HR, IT, and Finance each track onboarding\n  status separately with no shared visibility.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "6. HR, IT, Finance, and the hiring manager all see the same real-time\n   onboarding status dashboard, eliminating status-check emails.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 2
+    },
+    {
+      "scenario": "onboarding",
+      "n_findings": 9,
+      "chunks_in_context": 6,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 0.8888888888888888,
+      "covered": [
+        "initiation",
+        "hris_entry",
+        "digital_forms",
+        "it_provisioning",
+        "compliance_training",
+        "meeting_scheduling",
+        "status_visibility",
+        "finance_payroll"
+      ],
+      "missed": [
+        "exception_escalation"
+      ],
+      "latency_s": 5.6,
+      "findings": [
+        {
+          "topic": "Onboarding Initiation",
+          "old_state": "Hiring manager emails HR a PDF offer summary, and HR manually creates a paper onboarding folder.",
+          "new_state": "Onboarding is initiated automatically when a hiring manager marks an offer as Accepted in the Applicant Tracking System (ATS)."
+        },
+        {
+          "topic": "HRIS Entry",
+          "old_state": "HR manually enters the employee into the HRIS system by hand, typically taking 1-2 business days.",
+          "new_state": "Marking the offer as accepted in the ATS automatically creates an employee record in the HRIS via API integration with no manual re-entry."
+        },
+        {
+          "topic": "Welcome Packet and Tax/Benefits Forms",
+          "old_state": "HR prints and mails a paper welcome packet, tax forms, and benefits enrollment forms to the employee's home address, and the employee returns them by mail or in person on day one.",
+          "new_state": "System-generated digital welcome packet and e-signature tax forms and benefits enrollment are sent to the employee's personal email, and completed digitally before day one."
+        },
+        {
+          "topic": "IT Provisioning",
+          "old_state": "IT is notified via a separate email sent after HRIS entry and provisions access manually using a printed checklist over 3-5 business days.",
+          "new_state": "An automated ticket is created in the IT provisioning system with role-based access templates, provisioning accounts and shipping a laptop within 2 business days."
+        },
+        {
+          "topic": "Form Handling and Filing",
+          "old_state": "HR manually files paper forms in a physical cabinet and re-keys selected fields into the HRIS and payroll systems.",
+          "new_state": "Digital forms are stored directly in the document management system with no physical filing and no re-keying."
+        },
+        {
+          "topic": "Finance and Payroll Setup",
+          "old_state": "Finance receives new-hire payroll setup information manually from HR by walking a paper form to the Finance office.",
+          "new_state": "Payroll setup record is created automatically from the HRIS entry with no manual form walked to Finance."
+        },
+        {
+          "topic": "Scheduling Meetings and Shadowing",
+          "old_state": "The hiring manager manually schedules first-week meetings and shadowing sessions by emailing relevant team members individually.",
+          "new_state": "First-week meetings and shadowing sessions are auto-scheduled based on a role-based onboarding template and synced to calendars."
+        },
+        {
+          "topic": "Compliance Training",
+          "old_state": "Compliance training is assigned verbally by the manager with no automated tracking of completion, creating audit risk.",
+          "new_state": "Compliance training is auto-assigned in the Learning Management System (LMS) with due dates, automated reminders, and reportable completion tracking."
+        },
+        {
+          "topic": "Visibility and Tracking",
+          "old_state": "No single system of record; HR, IT, and Finance each track onboarding status separately with no shared visibility.",
+          "new_state": "HR, IT, Finance, and the hiring manager all see the same real-time onboarding status dashboard."
+        }
+      ],
+      "n_citations": 18,
+      "verified_shipped": 18,
+      "verified_current": 18,
+      "citations": [
+        {
+          "source": "old_process.md",
+          "excerpt": "When a new employee is hired, the hiring manager emails HR a PDF offer summary. HR manually creates a paper onboarding folder and schedules a first-day meeting.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "Onboarding is initiated automatically the moment a hiring manager marks an offer as \"Accepted\" in the Applicant Tracking System (ATS).",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR manually enters the employee into the HRIS system by hand (typically 1-2 business days after the email).",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "This automatically creates an employee record in the HRIS via API integration, no manual re-entry.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR prints and mails a paper welcome packet, tax forms (W-4, I-9), and benefits enrollment forms to the employee's home address.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "- **HR track:** system-generated digital welcome packet, e-signature tax forms (W-4, I-9) and benefits enrollment sent to the employee's personal email, due before day one.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "IT is notified via a separate email from HR, sent after the HRIS entry is complete, to provision a laptop, email account, and system access. Provisioning typically takes 3-5 business days and is done manually by an IT technician who follows a printed checklist.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "- **IT track:** automated ticket created in the IT provisioning system with role-based access templates; laptop shipped and accounts provisioned within 2 business days, tracked to completion in the dashboard.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "HR manually files the paper forms in a physical cabinet and re-keys selected fields into the HRIS and payroll systems.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "3. Employee completes all forms digitally via e-signature before their start date; digital forms are stored directly in the document management system (no physical filing, no re-keying).",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "Finance receives new-hire payroll setup information manually from HR, often by walking a paper form to the Finance office.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "- **Finance track:** payroll setup record created automatically from the HRIS entry; no manual form walked to Finance.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "7. The hiring manager manually schedules first-week meetings and shadowing sessions by emailing relevant team members individually.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "5. First-week meetings and shadowing sessions are auto-scheduled based on a role-based onboarding template and synced to calendars; the hiring manager can customize the template per new hire.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "8. Compliance training is assigned verbally by the manager; there is no automated tracking of completion.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "4. Compliance training is auto-assigned in the Learning Management System (LMS) with due dates and automated reminders; completion is tracked and reportable for audit purposes.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "old_process.md",
+          "excerpt": "- No single system of record; HR, IT, and Finance each track onboarding status separately with no shared visibility.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "new_process.md",
+          "excerpt": "6. HR, IT, Finance, and the hiring manager all see the same real-time onboarding status dashboard, eliminating status-check emails.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 3
+    },
+    {
+      "scenario": "expense",
+      "n_findings": 8,
+      "chunks_in_context": 7,
+      "chunks_total": 7,
+      "context_availability": 1.0,
+      "recall": 0.875,
+      "covered": [
+        "payment_timing",
+        "submission_method",
+        "auto_approval",
+        "mileage",
+        "duplicate_controls",
+        "lost_receipts",
+        "currency"
+      ],
+      "missed": [
+        "status_visibility"
+      ],
+      "latency_s": 5.3,
+      "findings": [
+        {
+          "topic": "Claim Submission and Receipt Handling",
+          "old_state": "The employee completes a paper Expense Claim Form (Form EX-12) by hand and staples the original receipts to the back of the form.",
+          "new_state": "The employee photographs each receipt in the SpendFlow app. Optical character recognition reads the amount, date and vendor and fills in the claim line."
+        },
+        {
+          "topic": "Manager and Executive Approvals",
+          "old_state": "The employee's line manager reviews the claim and signs the form. Claims over $500 also need a second signature from the department head.",
+          "new_state": "Claims under $200 with no policy flags are approved automatically with no manager involvement. Claims from $200 to $2,000 go to the line manager. Claims over $2,000 need approval from both the line manager and the finance controller."
+        },
+        {
+          "topic": "Mileage Calculation",
+          "old_state": "Mileage is calculated manually at $0.45 per mile using the odometer readings written on the form.",
+          "new_state": "Mileage is calculated from the GPS trace recorded by the app at $0.50 per mile. Employees no longer enter odometer readings."
+        },
+        {
+          "topic": "Foreign Currency Conversion",
+          "old_state": "Foreign currency expenses are converted at the exchange rate on the day the AP clerk keys the claim into the ledger, not the day the money was spent.",
+          "new_state": "Foreign currency expenses are converted at the daily rate from the central bank feed on the date of the transaction."
+        },
+        {
+          "topic": "Reimbursement Timing and Payout Method",
+          "old_state": "Reimbursement is paid through the monthly payroll run on the 5th of the following month, so employees usually wait 30 to 40 days to be repaid.",
+          "new_state": "Approved claims are paid by direct deposit within 3 business days of final approval, instead of waiting for the monthly payroll run."
+        },
+        {
+          "topic": "Lost Receipts Handling",
+          "old_state": "If a receipt is lost, the employee must sign a written affidavit and the department head must countersign it before AP will process the line.",
+          "new_state": "An employee can attest to a lost receipt inside the app. The line is marked for audit, and each employee is limited to 3 attested lost receipts per quarter. Beyond that limit the claim is routed to the finance controller."
+        },
+        {
+          "topic": "Duplicate Claim Detection",
+          "old_state": "There is no automated check for duplicate claims. Duplicates are caught only when a clerk happens to remember a previous submission.",
+          "new_state": "A duplicate detector screens every claim against the previous 12 months by amount, date and vendor before it reaches an approver."
+        },
+        {
+          "topic": "Finance Sample Auditing",
+          "old_state": "Finance reviews a random 5% sample of claims once per quarter.",
+          "new_state": "Finance samples 2% of auto-approved claims each month for manual review, replacing the old quarterly 5% sample."
+        }
+      ],
+      "n_citations": 17,
+      "verified_shipped": 17,
+      "verified_current": 17,
+      "citations": [
+        {
+          "source": "expense_old.md",
+          "excerpt": "1. The employee completes a paper Expense Claim Form (Form EX-12) by hand and staples the original receipts to the back of the form.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "1. The employee photographs each receipt in the SpendFlow app. Optical character recognition reads the amount, date and vendor and fills in the claim line.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "2. The employee's line manager reviews the claim and signs the form. Claims over\n   $500 also need a second signature from the department head.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "3. Claims under $200 with no policy flags are approved automatically with no\n   manager involvement.\n4. Claims from $200 to $2,000 go to the line manager, who has",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "5. Claims over $2,000 need approval from both the line manager and the finance\n   controller.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "4. An AP clerk checks the arithmetic on the form and keys each line into the\n   general ledger by hand. Mileage is calculated manually at $0.45 per mile us",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "6. Mileage is calculated from the GPS trace recorded by the app at $0.50 per\n   mile. Employees no longer enter odometer readings.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "5. Foreign currency expenses are converted at the exchange rate on the day the\n   AP clerk keys the claim into the ledger, not the day the money was spent.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "7. Foreign currency expenses are converted at the daily rate from the central\n   bank feed on the date of the transaction.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "6. Reimbursement is paid through the monthly payroll run on the 5th of the\n   following month, so employees usually wait 30 to 40 days to be repaid.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "8. Approved claims are paid by direct deposit within 3 business days of final\n   approval, instead of waiting for the monthly payroll run.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "7. If a receipt is lost, the employee must sign a written affidavit and the\n   department head must countersign it before AP will process the line.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "An employee can attest to a lost receipt inside the app. The line is marked for\naudit, and each employee is limited to 3 attested lost receipts per quarter.\nBeyond that limit the claim is routed to the finance controller.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "There is no automated check for duplicate claims. Duplicates are caught only\n  when a clerk happens to remember a previous submission.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "- A duplicate detector screens every claim against the previous 12 months by\n  amount, date and vendor before it reaches an approver.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "- Finance reviews a random 5% sample of claims once per quarter.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "- Finance samples 2% of auto-approved claims each month for manual review,\n  replacing the old quarterly 5% sample.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 1
+    },
+    {
+      "scenario": "expense",
+      "n_findings": 8,
+      "chunks_in_context": 7,
+      "chunks_total": 7,
+      "context_availability": 1.0,
+      "recall": 0.875,
+      "covered": [
+        "payment_timing",
+        "submission_method",
+        "auto_approval",
+        "mileage",
+        "duplicate_controls",
+        "lost_receipts",
+        "currency"
+      ],
+      "missed": [
+        "status_visibility"
+      ],
+      "latency_s": 5.2,
+      "findings": [
+        {
+          "topic": "Claim Submission and Receipt Handling",
+          "old_state": "The employee completes a paper Expense Claim Form (Form EX-12) by hand and staples the original receipts to the back of the form.",
+          "new_state": "The employee photographs each receipt in the SpendFlow app. Optical character recognition reads the amount, date and vendor and fills in the claim line."
+        },
+        {
+          "topic": "Approval Workflows",
+          "old_state": "The employee's line manager reviews the claim and signs the form. Claims over $500 also need a second signature from the department head.",
+          "new_state": "Claims under $200 with no policy flags are approved automatically. Claims from $200 to $2,000 go to the line manager. Claims over $2,000 need approval from both the line manager and the finance controller."
+        },
+        {
+          "topic": "Mileage Calculation",
+          "old_state": "Mileage is calculated manually at $0.45 per mile using the odometer readings written on the form.",
+          "new_state": "Mileage is calculated from the GPS trace recorded by the app at $0.50 per mile. Employees no longer enter odometer readings."
+        },
+        {
+          "topic": "Foreign Currency Conversion",
+          "old_state": "Foreign currency expenses are converted at the exchange rate on the day the AP clerk keys the claim into the ledger, not the day the money was spent.",
+          "new_state": "Foreign currency expenses are converted at the daily rate from the central bank feed on the date of the transaction."
+        },
+        {
+          "topic": "Reimbursement Timing",
+          "old_state": "Reimbursement is paid through the monthly payroll run on the 5th of the following month, so employees usually wait 30 to 40 days to be repaid.",
+          "new_state": "Approved claims are paid by direct deposit within 3 business days of final approval, instead of waiting for the monthly payroll run."
+        },
+        {
+          "topic": "Lost Receipts Handling",
+          "old_state": "If a receipt is lost, the employee must sign a written affidavit and the department head must countersign it before AP will process the line.",
+          "new_state": "An employee can attest to a lost receipt inside the app. The line is marked for audit, and each employee is limited to 3 attested lost receipts per quarter, beyond which the claim is routed to the finance controller."
+        },
+        {
+          "topic": "Duplicate Claim Controls",
+          "old_state": "There is no automated check for duplicate claims. Duplicates are caught only when a clerk happens to remember a previous submission.",
+          "new_state": "A duplicate detector screens every claim against the previous 12 months by amount, date and vendor before it reaches an approver."
+        },
+        {
+          "topic": "Finance Sampling / Audit Controls",
+          "old_state": "Finance reviews a random 5% sample of claims once per quarter.",
+          "new_state": "Finance samples 2% of auto-approved claims each month for manual review, replacing the old quarterly 5% sample."
+        }
+      ],
+      "n_citations": 16,
+      "verified_shipped": 14,
+      "verified_current": 15,
+      "citations": [
+        {
+          "source": "expense_old.md",
+          "excerpt": "1. The employee completes a paper Expense Claim Form (Form EX-12) by hand and staples the original receipts to the back of the form.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "1. The employee photographs each receipt in the SpendFlow app. Optical character recognition reads the amount, date and vendor and fills in the claim line.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "2. The employee's line manager reviews the claim and signs the form. Claims over\n   $500 also need a second signature from the department head.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "3. Claims under $200 with no policy flags are approved automatically with no\n   manager involvement.\n4. Claims from $200 to $2,000 go to the line manager, who has \n   response. If the manager does not respond, the claim escalates automatically to\n   the department head.\n5. Claims over $2,000 need approval from both the line manager and the finance\n   controller.",
+          "shipped": false,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "4. An AP clerk checks the arithmetic on the form and keys each line into the\n   general ledger by hand. Mileage is calculated manually at $0.45 per mile us",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "6. Mileage is calculated from the GPS trace recorded by the app at $0.50 per\n   mile. Employees no longer enter odometer readings.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "5. Foreign currency expenses are converted at the exchange rate on the day the\n   AP clerk keys the claim into the ledger, not the day the money was spent.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "7. Foreign currency expenses are converted at the daily rate from the central\n   bank feed on the date of the transaction.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "6. Reimbursement is paid through the monthly payroll run on the 5th of the\n   following month, so employees usually wait 30 to 40 days to be repaid.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "8. Approved claims are paid by direct deposit within 3 business days of final\n   approval, instead of waiting for the monthly payroll run.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "7. If a receipt is lost, the employee must sign a written affidavit and the\n   department head must countersign it before AP will process the line.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "An employee can attest to a lost receipt inside the app. The line is marked for\naudit, and each employee is limited to 3\nayed\n\n## Lost Receipts\nAn employee can attest to a lost receipt inside the app. The line is marked for\naudit, and each employee is limited to 3 attested lost receipts per quarter.\nBeyond that limit the claim is routed to the finance controller.",
+          "shipped": false,
+          "current": false,
+          "note": "excerpt not found in source text (best word overlap 67%)"
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "- There is no automated check for duplicate claims. Duplicates are caught only\n  when a clerk happens to remember a previous submission.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "- A duplicate detector screens every claim against the previous 12 months by\n  amount, date and vendor before it reaches an approver.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "- Finance reviews a random 5% sample of claims once per quarter.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "- Finance samples 2% of auto-approved claims each month for manual review,\n  replacing the old quarterly 5% sample.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 2
+    },
+    {
+      "scenario": "expense",
+      "n_findings": 9,
+      "chunks_in_context": 7,
+      "chunks_total": 7,
+      "context_availability": 1.0,
+      "recall": 0.75,
+      "covered": [
+        "payment_timing",
+        "submission_method",
+        "auto_approval",
+        "mileage",
+        "lost_receipts",
+        "currency"
+      ],
+      "missed": [
+        "duplicate_controls",
+        "status_visibility"
+      ],
+      "latency_s": 5.9,
+      "findings": [
+        {
+          "topic": "Claim Submission Method",
+          "old_state": "The employee completes a paper Expense Claim Form (Form EX-12) by hand and staples the original receipts to the back of the form.",
+          "new_state": "The employee photographs each receipt in the SpendFlow app. Optical character recognition reads the amount, date and vendor and fills in the claim line."
+        },
+        {
+          "topic": "Approval Workflows and Thresholds",
+          "old_state": "The employee's line manager reviews the claim and signs the form. Claims over $500 also need a second signature from the department head.",
+          "new_state": "Claims under $200 with no policy flags are approved automatically with no manager involvement. Claims from $200 to $2,000 go to the line manager. Claims over $2,000 need approval from both the line manager and the finance controller."
+        },
+        {
+          "topic": "Mileage Calculation and Rate",
+          "old_state": "Mileage is calculated manually at $0.45 per mile using the odometer readings written on the form.",
+          "new_state": "Mileage is calculated from the GPS trace recorded by the app at $0.50 per mile. Employees no longer enter odometer readings."
+        },
+        {
+          "topic": "Foreign Currency Conversion",
+          "old_state": "Foreign currency expenses are converted at the exchange rate on the day the AP clerk keys the claim into the ledger, not the day the money was spent.",
+          "new_state": "Foreign currency expenses are converted at the daily rate from the central bank feed on the date of the transaction."
+        },
+        {
+          "topic": "Reimbursement Timing and Method",
+          "old_state": "Reimbursement is paid through the monthly payroll run on the 5th of the following month, so employees usually wait 30 to 40 days to be repaid.",
+          "new_state": "Approved claims are paid by direct deposit within 3 business days of final approval, instead of waiting for the monthly payroll run."
+        },
+        {
+          "topic": "Lost Receipts Handling",
+          "old_state": "If a receipt is lost, the employee must sign a written affidavit and the department head must countersign it before AP will process the line.",
+          "new_state": "An employee can attest to a lost receipt inside the app. The line is marked for audit, and each employee is limited to 3 attested lost receipts per quarter. Beyond that limit the claim is routed to the finance controller."
+        },
+        {
+          "topic": "Duplicate Claims Control",
+          "old_state": "There is no automated check for duplicate claims. Duplicates are caught only when a clerk happens to remember a previous submission.",
+          "new_state": "A duplicate detector screens every claim against the previous 12 months by amount, date and vendor before it reaches an approver."
+        },
+        {
+          "topic": "Finance Sampling Controls",
+          "old_state": "Finance reviews a random 5% sample of claims once per quarter.",
+          "new_state": "Finance samples 2% of auto-approved claims each month for manual review, replacing the old quarterly 5% sample."
+        },
+        {
+          "topic": "Receipt Storage and Retention",
+          "old_state": "Paper forms and receipts are stored in boxes for seven years, and retrieval for an audit can take several days.",
+          "new_state": "Paper receipts no longer have to be kept, because the stored image is accepted as the record for the seven year retention period."
+        }
+      ],
+      "n_citations": 21,
+      "verified_shipped": 21,
+      "verified_current": 21,
+      "citations": [
+        {
+          "source": "expense_old.md",
+          "excerpt": "1. The employee completes a paper Expense Claim Form (Form EX-12) by hand and staples the original receipts to the back of the form.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "1. The employee photographs each receipt in the SpendFlow app. Optical character recognition reads the amount, date and vendor and fills in the claim line.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "2. The employee's line manager reviews the claim and signs the form. Claims over\n   $500 also need a second signature from the department head.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "3. Claims under $200 with no policy flags are approved automatically with no\n   manager involvement.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "4. Claims from $200 to $2,000 go to the line manager, who has",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "5. Claims over $2,000 need approval from both the line manager and the finance\n   controller.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "4. An AP clerk checks the arithmetic on the form and keys each line into the\n   general ledger by hand. Mileage is calculated manually at $0.45 per mile us",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "6. Mileage is calculated from the GPS trace recorded by the app at $0.50 per\n   mile. Employees no longer enter odometer readings.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "5. Foreign currency expenses are converted at the exchange rate on the day the\n   AP clerk keys the claim into the ledger, not the day the money was spent.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "7. Foreign currency expenses are converted at the daily rate from the central\n   bank feed on the date of the transaction.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "6. Reimbursement is paid through the monthly payroll run on the 5th of the\n   following month, so employees usually wait 30 to 40 days to be repaid.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "8. Approved claims are paid by direct deposit within 3 business days of final\n   approval, instead of waiting for the monthly payroll run.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "7. If a receipt is lost, the employee must sign a written affidavit and the\n   department head must countersign it before AP will process the line.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "An employee can attest to a lost receipt inside the app. The line is marked for\naudit, and each employee is limited to 3",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "attested lost receipts per quarter.\nBeyond that limit the claim is routed to the finance controller.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "- There is no automated check for duplicate claims. Duplicates are caught only\n  when a clerk happens to remember a previous submission.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "- A duplicate detector screens every claim against the previous 12 months by\n  amount, date and vendor before it reaches an approver.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "- Finance reviews a random 5% sample of claims once per quarter.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "- Finance samples 2% of auto-approved claims each month for manual review,\n  replacing the old quarterly 5% sample.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_old.md",
+          "excerpt": "- Paper forms and receipts are stored in boxes for seven years, and retrieval\n  for an audit can take several days.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "expense_new.md",
+          "excerpt": "the stored image is accepted as the record for the seven year retention period.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 3
+    },
+    {
+      "scenario": "vendor",
+      "n_findings": 7,
+      "chunks_in_context": 6,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 1.0,
+      "covered": [
+        "mechanism",
+        "sanctions",
+        "bank_verification",
+        "risk_tiers",
+        "duplicates",
+        "contracts",
+        "revalidation"
+      ],
+      "missed": [],
+      "latency_s": 4.8,
+      "findings": [
+        {
+          "topic": "Onboarding Communication and Workflow",
+          "old_state": "New suppliers are added through a chain of emails between the requesting team, Procurement and Finance, with no single system recording the state of a request.",
+          "new_state": "Vendors are onboarded through a self-service Vendor Portal that replaces the email chain and Vendor Master workbook, and requesters can see the status of every request in the portal."
+        },
+        {
+          "topic": "Sanctions Screening",
+          "old_state": "The procurement officer checks the vendor against the sanctions list by searching the OFAC website by hand and saves a screenshot of the result.",
+          "new_state": "Sanctions screening runs automatically through ComplyCheck at the moment of submission, and every active vendor is screened again each night."
+        },
+        {
+          "topic": "Bank Detail Verification",
+          "old_state": "Bank details are verified by phoning the bank using the number printed on the bank letter.",
+          "new_state": "The bank account is verified with a micro-deposit test where the portal sends two small deposits and the vendor confirms the amounts."
+        },
+        {
+          "topic": "Risk Assessment",
+          "old_state": "There is no risk assessment for vendors with annual spend under $25,000. Larger vendors receive a review that depends on which procurement officer picks up the request, so the depth of review varies.",
+          "new_state": "The portal assigns a risk tier based on expected annual spend and the type of data the vendor will handle, spanning Tier 1 (> $250k), Tier 2 ($25k to $250k), and Tier 3 (< $25k)."
+        },
+        {
+          "topic": "Contract Storage and Expiry Management",
+          "old_state": "Signed contracts are printed and kept in a physical binder in the Procurement office, and no one is warned when a contract is close to expiry.",
+          "new_state": "Signed contracts are stored in the contract repository, which sends renewal alerts to the contract owner 90 days before expiry."
+        },
+        {
+          "topic": "Vendor Re-validation",
+          "old_state": "Vendors are never re-validated after onboarding, and sanctions status and bank details can go years without a check.",
+          "new_state": "Every vendor is re-validated each 12 months, and the portal sends automated reminders to vendors whose documents are about to expire."
+        },
+        {
+          "topic": "Duplicate Vendor Prevention",
+          "old_state": "An internal audit found about 140 duplicate vendor records, mostly the same company entered twice under slightly different names.",
+          "new_state": "The portal checks the tax ID and the bank account number against existing records at submission, blocking matches and pointing the requester to the existing vendor."
+        }
+      ],
+      "n_citations": 16,
+      "verified_shipped": 16,
+      "verified_current": 16,
+      "citations": [
+        {
+          "source": "vendor_old.md",
+          "excerpt": "New suppliers are added through a chain of emails between the requesting team, Procurement and Finance. The vendor list lives in a shared Excel workbook called Vendor Master, and there is no single system that records the state of a request.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Vendors are onboarded through a self-service Vendor Portal. The portal replaces the email chain and the Vendor Master workbook, and it creates the supplier record in the ERP system directly through an API.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Requesters can see the status of every request in the portal.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "The procurement officer checks the vendor against the sanctions list by searching the OFAC website by hand and saves a screenshot of the result.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Sanctions screening runs automatically through ComplyCheck at the moment of submission, and every active vendor is screened again each night.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Bank details are verified by phoning the bank using the number printed on the bank letter.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The bank account is verified with a micro-deposit test. The portal sends two small deposits and the vendor confirms the amounts, which normally takes 2 days.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "There is no risk assessment for vendors with annual spend under $25,000. Larger vendors receive a review that depends on which procurement officer picks up the request, so the depth of review varies from one vendor to another.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The portal assigns a risk tier based on expected annual spend and the type of data the vendor will handle.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Signed contracts are printed and kept in a physical binder in the Procurement office.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "No one is warned when a contract is close to expiry, so some contracts lapse while the vendor continues to be paid.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Signed contracts are stored in the contract repository, which sends renewal alerts to the contract owner 90 days before expiry.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Vendors are never re-validated after onboarding. Sanctions status and bank details can go years without a check.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Every vendor is re-validated each 12 months, and the portal sends automated reminders to vendors whose documents are about to expire.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "An internal audit found about 140 duplicate vendor records, mostly the same company entered twice under slightly different names.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The portal checks the tax ID and the bank account number against existing records at submission. A match blocks the request and points the requester to the existing vendor, which addresses the duplicate records found in the last audit.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 1
+    },
+    {
+      "scenario": "vendor",
+      "n_findings": 8,
+      "chunks_in_context": 6,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 1.0,
+      "covered": [
+        "mechanism",
+        "sanctions",
+        "bank_verification",
+        "risk_tiers",
+        "duplicates",
+        "contracts",
+        "revalidation"
+      ],
+      "missed": [],
+      "latency_s": 5.0,
+      "findings": [
+        {
+          "topic": "Onboarding Communication and Workflow",
+          "old_state": "New suppliers are added through a chain of emails between the requesting team, Procurement and Finance.",
+          "new_state": "Vendors are onboarded through a self-service Vendor Portal. The portal replaces the email chain and the Vendor Master workbook, and it creates the supplier record in the ERP system directly through an API."
+        },
+        {
+          "topic": "Sanctions Screening",
+          "old_state": "The procurement officer checks the vendor against the sanctions list by searching the OFAC website by hand and saves a screenshot of the result.",
+          "new_state": "Sanctions screening runs automatically through ComplyCheck at the moment of submission, and every active vendor is screened again each night."
+        },
+        {
+          "topic": "Bank Detail Verification",
+          "old_state": "Bank details are verified by phoning the bank using the number printed on the bank letter.",
+          "new_state": "The bank account is verified with a micro-deposit test. The portal sends two small deposits and the vendor confirms the amounts, which normally takes 2 days."
+        },
+        {
+          "topic": "Risk Assessment and Tiers",
+          "old_state": "There is no risk assessment for vendors with annual spend under $25,000. Larger vendors receive a review that depends on which procurement officer picks up the request, so the depth of review varies from one vendor to another.",
+          "new_state": "The portal assigns a risk tier based on expected annual spend and the type of data the vendor will handle, ranging from Tier 1 (over $250,000) to Tier 3 (under $25,000)."
+        },
+        {
+          "topic": "Contract Storage and Tracking",
+          "old_state": "Signed contracts are printed and kept in a physical binder in the Procurement office. No one is warned when a contract is close to expiry, so some contracts lapse while the vendor continues to be paid.",
+          "new_state": "Signed contracts are stored in the contract repository, which sends renewal alerts to the contract owner 90 days before expiry."
+        },
+        {
+          "topic": "Duplicate Vendor Prevention",
+          "old_state": "An internal audit found about 140 duplicate vendor records, mostly the same company entered twice under slightly different names.",
+          "new_state": "The portal checks the tax ID and the bank account number against existing records at submission. A match blocks the request and points the requester to the existing vendor, which addresses the duplicate records found in the last audit."
+        },
+        {
+          "topic": "Vendor Re-validation",
+          "old_state": "Vendors are never re-validated after onboarding. Sanctions status and bank details can go years without a check.",
+          "new_state": "Every vendor is re-validated each 12 months, and the portal sends automated reminders to vendors whose documents are about to expire."
+        },
+        {
+          "topic": "Request Visibility for Requesters",
+          "old_state": "Requesting teams have no way to see progress and call Procurement for updates.",
+          "new_state": "Requesters can see the status of every request in the portal."
+        }
+      ],
+      "n_citations": 17,
+      "verified_shipped": 17,
+      "verified_current": 17,
+      "citations": [
+        {
+          "source": "vendor_old.md",
+          "excerpt": "New suppliers are added through a chain of emails between the requesting team,\nProcurement and Finance.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Vendors are onboarded through a self-service Vendor Portal. The portal replaces\nthe email chain and the Vendor Master workbook, and it creates the supplier record\nin the ERP system directly through an API.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "The procurement officer checks the vendor against the sanctions list by\nsearching the OFAC website by hand and saves a screenshot of the result.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Sanctions screening runs automatically through ComplyCheck at the moment of\nsubmission, and every active vendor is screened again each night.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Bank details are verified by phoning the bank using the number printed on the\nbank letter.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The bank account is verified with a micro-deposit test. The portal sends two\nsmall deposits and the vendor confirms the amounts, which normal",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "There is no risk assessment for vendors with annual spend under $25,000. Larger\nvendors receive a review that depends on which procurement officer picks up the\nrequest, so the depth of review varies from one vendor to another.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The portal assigns a risk tier based on expected annual spend and the type of\ndata the vendor will handle.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Signed contracts are printed and kept in a physical binder in the Procurement\noffice.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "No one is warned when a contract is close to expiry, so some contracts lapse\nwhile the vendor continues to be paid.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Signed contracts are stored in the contract re",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "An internal audit found about 140 duplicate vendor records, mostly the same\ncompany entered twice under slightly different names.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The portal checks the tax ID and the bank account number against existing records\nat submission. A match blocks the request and points the requester to the\nexisting vendor, which addresses the duplicate records found in the last audit.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Vendors are never re-validated after onboarding. Sanctions status and bank\ndetails can go years without a check.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Every vendor is re-validated each 12 months, and the portal sends automated\nreminders to vendors whose documents are about to expire.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Requesting teams have no way to see progress and call Procurement for updates.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Requesters can see the status of every request in the portal.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 2
+    },
+    {
+      "scenario": "vendor",
+      "n_findings": 9,
+      "chunks_in_context": 6,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 1.0,
+      "covered": [
+        "mechanism",
+        "sanctions",
+        "bank_verification",
+        "risk_tiers",
+        "duplicates",
+        "contracts",
+        "revalidation"
+      ],
+      "missed": [],
+      "latency_s": 5.8,
+      "findings": [
+        {
+          "topic": "Onboarding Communication and Method",
+          "old_state": "New suppliers are added through a chain of emails between the requesting team, Procurement and Finance.",
+          "new_state": "Vendors are onboarded through a self-service Vendor Portal, replacing the email chain."
+        },
+        {
+          "topic": "Vendor Record Management and Storage",
+          "old_state": "The vendor list lives in a shared Excel workbook called Vendor Master, and Finance creates the vendor record in the ERP system after receiving the approved row.",
+          "new_state": "The portal replaces the Vendor Master workbook, and it creates the supplier record in the ERP system directly through an API."
+        },
+        {
+          "topic": "Sanctions Screening",
+          "old_state": "The procurement officer checks the vendor against the sanctions list by searching the OFAC website by hand and saves a screenshot of the result.",
+          "new_state": "Sanctions screening runs automatically through ComplyCheck at the moment of submission, and every active vendor is screened again each night."
+        },
+        {
+          "topic": "Bank Detail Verification",
+          "old_state": "Bank details are verified by phoning the bank using the number printed on the bank letter.",
+          "new_state": "The bank account is verified with a micro-deposit test where the portal sends two small deposits and the vendor confirms the amounts."
+        },
+        {
+          "topic": "Risk Assessment",
+          "old_state": "There is no risk assessment for vendors with annual spend under $25,000. Larger vendors receive a review that depends on which procurement officer picks up the request, so the depth of review varies.",
+          "new_state": "The portal assigns a risk tier based on expected annual spend and the type of data the vendor will handle, with specific questionnaires and reviews per tier."
+        },
+        {
+          "topic": "Contract Storage and Expiry Management",
+          "old_state": "Signed contracts are printed and kept in a physical binder in the Procurement office, and no one is warned when a contract is close to expiry.",
+          "new_state": "Signed contracts are stored in the contract repository, which sends renewal alerts to the contract owner 90 days before expiry."
+        },
+        {
+          "topic": "Vendor Re-validation",
+          "old_state": "Vendors are never re-validated after onboarding, and sanctions status and bank details can go years without a check.",
+          "new_state": "Every vendor is re-validated each 12 months, and the portal sends automated reminders to vendors whose documents are about to expire."
+        },
+        {
+          "topic": "Duplicate Vendor Prevention",
+          "old_state": "An internal audit found about 140 duplicate vendor records, mostly the same company entered twice under slightly different names.",
+          "new_state": "The portal checks the tax ID and the bank account number against existing records at submission, and a match blocks the request."
+        },
+        {
+          "topic": "Request Tracking and Onboarding Duration",
+          "old_state": "Requesting teams have no way to see progress and call Procurement for updates, and onboarding takes 15 to 20 business days on average.",
+          "new_state": "Requesters can see the status of every request in the portal, and onboarding time falls to 3 business days for Tier 3 and about 10 business days for Tier 1."
+        }
+      ],
+      "n_citations": 22,
+      "verified_shipped": 22,
+      "verified_current": 22,
+      "citations": [
+        {
+          "source": "vendor_old.md",
+          "excerpt": "New suppliers are added through a chain of emails between the requesting team,\nProcurement and Finance.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Vendors are onboarded through a self-service Vendor Portal. The portal replaces\nthe email chain and the Vendor Master workbook",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "The vendor list lives in a shared Excel workbook called Vendor Master, and there is no single system that records the state of a request.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Finance creates the vendor record in the ERP system after receiving the approved row.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The portal replaces\nthe email chain and the Vendor Master workbook, and it creates the supplier record\nin the ERP system directly through an API.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "The procurement officer checks the vendor against the sanctions list by searching\nthe OFAC website by hand and saves a screenshot of the result.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Sanctions screening runs automatically through ComplyCheck at the moment of\nsubmission, and every active vendor is screened again each night.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Bank details are verified by phoning the bank using the number printed on the\nbank letter.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The bank account is verified with a micro-deposit test. The portal sends two\nsmall deposits and the vendor confirms the amounts",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "There is no risk assessment for vendors with annual spend under $25,000. Larger\nvendors receive a review that depends on which procurement officer picks up the\nrequest, so the depth of review varies from one vendor to another.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The portal assigns a risk tier based on expected annual spend and the type of\ndata the vendor will handle.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Signed contracts are printed and kept in a physical binder in the Procurement\noffice.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "No one is warned when a contract is close to expiry, so some contracts lapse\nwhile the vendor continues to be paid.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Signed contracts are stored in the contract repository, which sends renewal alerts\nto the contract owner 90 days before expiry.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Vendors are never re-validated after onboarding. Sanctions status and bank\ndetails can go years without a check.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Every vendor is re-validated each 12 months, and the portal sends automated\nreminders to vendors whose documents are about to expire.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "An internal audit found about 140 duplicate vendor records, mostly the same\ncompany entered twice under slightly different names.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "The portal checks the tax ID and the bank account number against existing records\nat submission. A match blocks the request and points the requester to the\nexisting vendor",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Onboarding takes 15 to 20 business days on average.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_old.md",
+          "excerpt": "Requesting teams have no way to see progress and call Procurement for updates.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Onboarding time falls from 15 to 20 business days to 3 business days for Tier 3\nand about 10 business days for Tier 1.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "vendor_new.md",
+          "excerpt": "Requesters can see the status of every request in the portal.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 3
+    },
+    {
+      "scenario": "incident",
+      "n_findings": 7,
+      "chunks_in_context": 6,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 1.0,
+      "covered": [
+        "detection",
+        "severity",
+        "acknowledgement",
+        "incident_commander",
+        "communication",
+        "postmortem",
+        "on_call_pay"
+      ],
+      "missed": [],
+      "latency_s": 5.3,
+      "findings": [
+        {
+          "topic": "Incident Detection and Ticket Creation",
+          "old_state": "Anyone who noticed an outage called the service desk. Monitoring tools raised alarms on a wall display, but did not create tickets.",
+          "new_state": "A monitoring alert creates an incident in PagerRelay with a proposed severity and there is no need to phone the service desk."
+        },
+        {
+          "topic": "Severity Classification",
+          "old_state": "The service desk agent logged a ticket by hand and classified it as major or minor based on personal judgement, because there are no written severity definitions.",
+          "new_state": "Severity levels include SEV1, SEV2, and SEV3, each with a written definition so that two people classify the same issue the same way."
+        },
+        {
+          "topic": "Escalation and Acknowledgement",
+          "old_state": "For a major incident, the agent followed a printed phone tree and called the on-call engineer's mobile phone. If there was no answer after 10 minutes, the agent called the next engineer on the list.",
+          "new_state": "The on-call engineer is paged through the mobile app, then by SMS, then by phone call, and must acknowledge within 5 minutes or it escalates automatically to the secondary on-call and engineering manager."
+        },
+        {
+          "topic": "Incident Leadership",
+          "old_state": "There was no incident commander, and engineers on the call decided among themselves who led the technical work.",
+          "new_state": "PagerRelay assigns an incident commander from a rotating roster who coordinates the work and does not make the technical changes."
+        },
+        {
+          "topic": "Communications and Status Updates",
+          "old_state": "Updates went out by email to the all-it distribution list about every hour when someone remembered, and there was no public status page for customers.",
+          "new_state": "During a SEV1, the communications lead updates the public status page every 30 minutes until the incident is resolved."
+        },
+        {
+          "topic": "Postmortems",
+          "old_state": "A written postmortem was required only when an outage lasted longer than 8 hours, was written in a Word document, stayed within engineering, and most incidents under 8 hours were never reviewed.",
+          "new_state": "A blameless postmortem is required within 5 business days for every SEV1 and SEV2 using a standard template stored in the engineering wiki, reviewed at the weekly reliability meeting, and action items are tracked in Jira."
+        },
+        {
+          "topic": "On-Call Structure and Compensation",
+          "old_state": "Engineers on the on-call list received no allowance and no formal rota, leading the same few senior engineers to answer most calls and suffer burnout.",
+          "new_state": "On-call duty rotates weekly across the whole engineering team, engineers receive an on-call stipend of $350 per week, and the rota is published a month ahead."
+        }
+      ],
+      "n_citations": 14,
+      "verified_shipped": 14,
+      "verified_current": 14,
+      "citations": [
+        {
+          "source": "incident_old.md",
+          "excerpt": "1. Anyone who notices an outage calls the service desk. Monitoring tools raise\n   alarms on a wall display, but they do not create tickets.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "1. A monitoring alert creates an incident in PagerRelay with a proposed severity.\n   There is no need to phone the service desk.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "2. The service desk agent logs a ticket by hand and classifies it as major or\n   minor based on personal judgement, because there are no written severity\n   definitions.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "Each level has a written definition so that two people classify the same issue the\nsame way.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "3. For a major incident, the agent follows the printed phone tree and calls the\n   on-call engineer's mobile phone. If there is no answer after 10 minutes, the\n   agent calls the next engineer on the list.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "3. The on-call engineer must acknowledge within 5 minutes. If there is no\n   acknowledgement, the page escalates automatically to the secondary on-call and\n   then to the engineering manager.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "4. There is no incident commander. The engineers who join the call de",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "4. For SEV1 and SEV2, PagerRelay opens a dedicated chat channel named after the\n   incident and assigns an incident commander from a rotating roster. The commander\n   coordinates the work and does not make the technical changes.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "5. Updates go out by email to the all-it distribution list. They are sent about\n   every hour when someone remembers, and there is no public status page for\n   customers.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "5. During a SEV1, the communications lead updates the public status page every\n   30 minutes until the incident is resolved.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "A written postmortem is required only when an outage lasts longer than 8 hours.\nThe postmortem is written in a Word document and usually stays within the\nengineering team. Most incidents under 8 hours are never reviewed, so the same\nfailures repeat.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "A blameless postmortem is required within 5 business days for every SEV1 and SEV2.\nThe postmortem uses a standard template stored in the engineering wiki and is\nreviewed at the weekly reliability meeting. Action items are tracked in Jira with\na named owner and a due date.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "Engineers on the on-call list receive no allowance and no formal rota. The same\nfew senior engineers answer most calls, which has led",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "On-call duty rotates weekly across the whole engineering team. Engineers receive an\non-call stipend of $350 per week, and the rota is published a month ahead.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 1
+    },
+    {
+      "scenario": "incident",
+      "n_findings": 7,
+      "chunks_in_context": 6,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 1.0,
+      "covered": [
+        "detection",
+        "severity",
+        "acknowledgement",
+        "incident_commander",
+        "communication",
+        "postmortem",
+        "on_call_pay"
+      ],
+      "missed": [],
+      "latency_s": 5.1,
+      "findings": [
+        {
+          "topic": "Incident Detection and Ticket Creation",
+          "old_state": "Anyone who notices an outage calls the service desk. Monitoring tools raise alarms on a wall display, but they do not create tickets.",
+          "new_state": "A monitoring alert creates an incident in PagerRelay with a proposed severity. There is no need to phone the service desk."
+        },
+        {
+          "topic": "Severity Classification",
+          "old_state": "The service desk agent logs a ticket by hand and classifies it as major or minor based on personal judgement, because there are no written severity definitions.",
+          "new_state": "Each level has a written definition so that two people classify the same issue the same way."
+        },
+        {
+          "topic": "Escalation and Paging",
+          "old_state": "For a major incident, the agent follows the printed phone tree and calls the on-call engineer's mobile phone. If there is no answer after 10 minutes, the agent calls the next engineer on the list.",
+          "new_state": "The on-call engineer is paged through the mobile app, then by SMS, then by phone call, until someone responds. The on-call engineer must acknowledge within 5 minutes. If there is no acknowledgement, the page escalates automatically to the secondary on-call and then to the engineering manager."
+        },
+        {
+          "topic": "Incident Command and Technical Leadership",
+          "old_state": "There is no incident commander. The engineers who join the call decide among themselves who leads the technical work.",
+          "new_state": "For SEV1 and SEV2, PagerRelay opens a dedicated chat channel named after the incident and assigns an incident commander from a rotating roster. The commander coordinates the work and does not make the technical changes."
+        },
+        {
+          "topic": "Communications and Status Updates",
+          "old_state": "Updates go out by email to the all-it distribution list. They are sent about every hour when someone remembers, and there is no public status page for customers.",
+          "new_state": "During a SEV1, the communications lead updates the public status page every 30 minutes until the incident is resolved."
+        },
+        {
+          "topic": "Postmortems",
+          "old_state": "A written postmortem is required only when an outage lasts longer than 8 hours. The postmortem is written in a Word document and usually stays within the engineering team. Most incidents under 8 hours are never reviewed, so the same failures repeat.",
+          "new_state": "A blameless postmortem is required within 5 business days for every SEV1 and SEV2. The postmortem uses a standard template stored in the engineering wiki and is reviewed at the weekly reliability meeting. Action items are tracked in Jira with a named owner and a due date."
+        },
+        {
+          "topic": "On-Call Compensation and Rota",
+          "old_state": "Engineers on the on-call list receive no allowance and no formal rota. The same few senior engineers answer most calls, which has led to burnout and two resignations in the last year.",
+          "new_state": "On-call duty rotates weekly across the whole engineering team. Engineers receive an on-call stipend of $350 per week, and the rota is published a month ahead."
+        }
+      ],
+      "n_citations": 14,
+      "verified_shipped": 14,
+      "verified_current": 14,
+      "citations": [
+        {
+          "source": "incident_old.md",
+          "excerpt": "1. Anyone who notices an outage calls the service desk. Monitoring tools raise\n   alarms on a wall display, but they do not create tickets.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "1. A monitoring alert creates an incident in PagerRelay with a proposed severity.\n   There is no need to phone the service desk.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "2. The service desk agent logs a ticket by hand and classifies it as major or\n   minor based on personal judgement, because there are no written severity\n   definitions.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "Each level has a written definition so that two people classify the same issue the\nsame way.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "3. For a major incident, the agent follows the printed phone tree and calls the\n   on-call engineer's mobile phone. If there is no answer after 10 minutes, the\n   agent calls the next engineer on the list.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "2. The on-call engineer is paged through the mobile app, then by SMS, then by\n   phone call, until someone responds.\n3. The on-call engineer must acknowledge within 5 minutes. If there is no\n   acknowledgement, the page escalates automatically to the secondary on-call and\n   then to the engineering manager.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "4. There is no incident commander. The engineers who join the call de",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "4. For SEV1 and SEV2, PagerRelay opens a dedicated chat channel named after the\n   incident and assigns an incident commander from a rotating roster. The commander\n   coordinates the work and does not make the technical changes.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "5. Updates go out by email to the all-it distribution list. They are sent about\n   every hour when someone remembers, and there is no public status page for\n   customers.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "5. During a SEV1, the communications lead updates the public status page every\n   30 minutes until the incident is resolved.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "A written postmortem is required only when an outage lasts longer than 8 hours.\nThe postmortem is written in a Word document and usually stays within the\nengineering team. Most incidents under 8 hours are never reviewed, so the same\nfailures repeat.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "A blameless postmortem is required within 5 business days for every SEV1 and SEV2.\nThe postmortem uses a standard template stored in the engineering wiki and is\nreviewed at the weekly reliability meeting. Action items are tracked in Jira with\na named owner and a due date.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "Engineers on the on-call list receive no allowance and no formal rota. The same\nfew senior engineers answer most calls, which has led",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "On-call duty rotates weekly across the whole engineering team. Engineers receive an\non-call stipend of $350 per week, and the rota is published a month ahead.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 2
+    },
+    {
+      "scenario": "incident",
+      "n_findings": 7,
+      "chunks_in_context": 6,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 1.0,
+      "covered": [
+        "detection",
+        "severity",
+        "acknowledgement",
+        "incident_commander",
+        "communication",
+        "postmortem",
+        "on_call_pay"
+      ],
+      "missed": [],
+      "latency_s": 4.9,
+      "findings": [
+        {
+          "topic": "Incident Detection and Ticket Creation",
+          "old_state": "Anyone who notices an outage calls the service desk. Monitoring tools raise alarms on a wall display, but they do not create tickets.",
+          "new_state": "A monitoring alert creates an incident in PagerRelay with a proposed severity. There is no need to phone the service desk."
+        },
+        {
+          "topic": "Severity Classification",
+          "old_state": "The service desk agent logs a ticket by hand and classifies it as major or minor based on personal judgement, because there are no written severity definitions.",
+          "new_state": "Each level has a written definition so that two people classify the same issue the same way."
+        },
+        {
+          "topic": "Escalation and Acknowledgment",
+          "old_state": "For a major incident, the agent follows the printed phone tree and calls the on-call engineer's mobile phone. If there is no answer after 10 minutes, the agent calls the next engineer on the list.",
+          "new_state": "The on-call engineer must acknowledge within 5 minutes. If there is no acknowledgement, the page escalates automatically to the secondary on-call and then to the engineering manager."
+        },
+        {
+          "topic": "Incident Leadership",
+          "old_state": "There is no incident commander. The engineers who join the call decide among themselves who leads the technical work.",
+          "new_state": "For SEV1 and SEV2, PagerRelay opens a dedicated chat channel named after the incident and assigns an incident commander from a rotating roster. The commander coordinates the work and does not make the technical changes."
+        },
+        {
+          "topic": "Customer and Stakeholder Communication",
+          "old_state": "Updates go out by email to the all-it distribution list. They are sent about every hour when someone remembers, and there is no public status page for customers.",
+          "new_state": "During a SEV1, the communications lead updates the public status page every 30 minutes until the incident is resolved."
+        },
+        {
+          "topic": "Postmortems",
+          "old_state": "A written postmortem is required only when an outage lasts longer than 8 hours. The postmortem is written in a Word document and usually stays within the engineering team.",
+          "new_state": "A blameless postmortem is required within 5 business days for every SEV1 and SEV2. The postmortem uses a standard template stored in the engineering wiki and is reviewed at the weekly reliability meeting."
+        },
+        {
+          "topic": "On-Call Compensation and Rotation",
+          "old_state": "Engineers on the on-call list receive no allowance and no formal rota. The same few senior engineers answer most calls",
+          "new_state": "On-call duty rotates weekly across the whole engineering team. Engineers receive an on-call stipend of $350 per week, and the rota is published a month ahead."
+        }
+      ],
+      "n_citations": 14,
+      "verified_shipped": 14,
+      "verified_current": 14,
+      "citations": [
+        {
+          "source": "incident_old.md",
+          "excerpt": "1. Anyone who notices an outage calls the service desk. Monitoring tools raise\n   alarms on a wall display, but they do not create tickets.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "1. A monitoring alert creates an incident in PagerRelay with a proposed severity.\n   There is no need to phone the service desk.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "2. The service desk agent logs a ticket by hand and classifies it as major or\n   minor based on personal judgement, because there are no written severity\n   definitions.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "Each level has a written definition so that two people classify the same issue the\nsame way.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "3. For a major incident, the agent follows the printed phone tree and calls the\n   on-call engineer's mobile phone. If there is no answer after 10 minutes, the\n   agent calls the next engineer on the list.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "3. The on-call engineer must acknowledge within 5 minutes. If there is no\n   acknowledgement, the page escalates automatically to the secondary on-call and\n   then to the engineering manager.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "4. There is no incident commander. The engineers who join the call decide among\n   themselves who leads the technical work.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "4. For SEV1 and SEV2, PagerRelay opens a dedicated chat channel named after the\n   incident and assigns an incident commander from a rotating roster. The commander\n   coordinates the work and does not make the technical changes.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "5. Updates go out by email to the all-it distribution list. They are sent about\n   every hour when someone remembers, and there is no public status page for\n   customers.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "5. During a SEV1, the communications lead updates the public status page every\n   30 minutes until the incident is resolved.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "A written postmortem is required only when an outage lasts longer than 8 hours.\nThe postmortem is written in a Word document and usually stays within the\nengineering team.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "A blameless postmortem is required within 5 business days for every SEV1 and SEV2.\nThe postmortem uses a standard template stored in the engineering wiki and is\nreviewed at the weekly reliability meeting.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_old.md",
+          "excerpt": "Engineers on the on-call list receive no allowance and no formal rota. The same\nfew senior engineers answer most calls",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "incident_new.md",
+          "excerpt": "On-call duty rotates weekly across the whole engineering team. Engineers receive an\non-call stipend of $350 per week, and the rota is published a month ahead.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 3
+    },
+    {
+      "scenario": "refund",
+      "n_findings": 7,
+      "chunks_in_context": 6,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 1.0,
+      "covered": [
+        "channel",
+        "thresholds",
+        "payout_cadence",
+        "window",
+        "store_credit",
+        "fraud",
+        "reason_codes"
+      ],
+      "missed": [],
+      "latency_s": 5.0,
+      "findings": [
+        {
+          "topic": "Refund Request Method",
+          "old_state": "Refund requests are handled one at a time by support agents through email, with no self-service option.",
+          "new_state": "Customers request refunds in the self-service Help Center."
+        },
+        {
+          "topic": "Payout Frequency and Speed",
+          "old_state": "Finance pays refunds in a weekly batch every Thursday, with an average wait time of 9 days from request to money back.",
+          "new_state": "Approved refunds are paid in a daily run and reach the customer within 2 business days (under 2 days on average)."
+        },
+        {
+          "topic": "Refund Window",
+          "old_state": "Refunds are accepted within 14 days of delivery.",
+          "new_state": "The refund window has been extended to 30 days after delivery."
+        },
+        {
+          "topic": "Payment Methods / Options",
+          "old_state": "Finance pays the refund to the original payment method only, and store credit is not offered.",
+          "new_state": "Customers can choose store credit instead of a payment to the original method, which carries a 10% bonus."
+        },
+        {
+          "topic": "Approval Thresholds and Process",
+          "old_state": "A refund above $20 needs approval from a team lead via chat message, and a refund above $100 needs the support manager.",
+          "new_state": "A refund under $50 is approved instantly under certain conditions, a refund from $50 to $300 goes to a support agent, and a refund above $300 needs review by both the support manager and a fraud analyst."
+        },
+        {
+          "topic": "Fraud Controls",
+          "old_state": "Fraud checks are limited to manual spot checks on 1 in 20 refunds, and agents rely on memory to recognise repeat refund requesters without a shared list.",
+          "new_state": "A fraud scoring model rates every request (scores above 0.8 trigger manual review), and the system flags a customer automatically after 3 refunds within 60 days with flags visible to every agent."
+        },
+        {
+          "topic": "Refund Reason Tracking",
+          "old_state": "Refund reasons are written as free text, preventing the company from reporting which products cause the most refunds.",
+          "new_state": "Customers choose reason codes from a fixed list for every request, enabling a weekly product-quality report."
+        }
+      ],
+      "n_citations": 18,
+      "verified_shipped": 17,
+      "verified_current": 17,
+      "citations": [
+        {
+          "source": "refund_old.md",
+          "excerpt": "Refund requests are handled one at a time by support agents through email. The process has no self-service option for customers.",
+          "shipped": false,
+          "current": false,
+          "note": "excerpt not found in source text (best word overlap 64%)"
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Customers request refunds in the self-service Help Center.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Finance pays refunds in a weekly batch.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Customers wait 9 days on average from request to money back.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Payouts run daily instead of weekly.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Approved refunds are paid in a daily run and reach the customer within\n   2 business days.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Refunds are accepted within 14 days of delivery.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "The refund window has been extended from 14 days\nto 30 days after delivery.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Finance pays the refund to the original payment method only. Store credit is\nnot offered.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Customers can choose store credit instead of a payment to the original method.\nStore credit carries a 10% bonus.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "A refund above $20 needs approval from a team lead, who is asked through a chat\nmessage. A refund above $100 also needs the support manager.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "A refund under $50 is approved instantly if the customer's refund rate over the\n   past 12 months is below 10% and the order was delivered within 30 days.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "A refund from $50 to $300 is routed to a support agent, who must respond within\n   a 4 hour service level.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "A refund above $300 needs review by both the support manager and a fraud analyst.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Fraud checks are limited to manual spot checks on 1 in 20 refunds. Agents rely on\nmemory to recognise customers who request refunds repeatedly. There is no shared\nlist of repeat refund requesters.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "A fraud scoring model rates every request. Requests with a score above 0.8 are sent\nfor manual review even when they fall under the automatic limit. The system flags a\ncustomer automatically after 3 refunds within 60 days, and the flag is visible to\nevery agent.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Refund reasons are written as free text, so the company cannot report which\nproducts cause the most refunds.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Reason codes are captured for every request. A weekly product-quality report shows\nwhich items generate the most refunds, so merchandising can act on the data.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 1
+    },
+    {
+      "scenario": "refund",
+      "n_findings": 7,
+      "chunks_in_context": 6,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 1.0,
+      "covered": [
+        "channel",
+        "thresholds",
+        "payout_cadence",
+        "window",
+        "store_credit",
+        "fraud",
+        "reason_codes"
+      ],
+      "missed": [],
+      "latency_s": 5.2,
+      "findings": [
+        {
+          "topic": "Customer Request Method",
+          "old_state": "Refund requests are handled one at a time by support agents through email, with no self-service option for customers.",
+          "new_state": "Customers request refunds in the self-service Help Center."
+        },
+        {
+          "topic": "Approval Workflows and Thresholds",
+          "old_state": "A refund above $20 needs approval from a team lead through a chat message, and a refund above $100 also needs the support manager.",
+          "new_state": "A refund under $50 is approved instantly under certain conditions, a refund from $50 to $300 is routed to a support agent, and a refund above $300 needs review by both the support manager and a fraud analyst."
+        },
+        {
+          "topic": "Payout Schedule and Speed",
+          "old_state": "Finance pays refunds in a weekly batch every Thursday, with customers waiting 9 days on average from request to money back.",
+          "new_state": "Approved refunds are paid in a daily run and reach the customer within 2 business days (under 2 days on average)."
+        },
+        {
+          "topic": "Refund Window",
+          "old_state": "Refunds are accepted within 14 days of delivery.",
+          "new_state": "The refund window has been extended from 14 days to 30 days after delivery."
+        },
+        {
+          "topic": "Refund Payout Options",
+          "old_state": "Finance pays the refund to the original payment method only. Store credit is not offered.",
+          "new_state": "Customers can choose store credit instead of a payment to the original method, with store credit carrying a 10% bonus."
+        },
+        {
+          "topic": "Fraud Controls",
+          "old_state": "Fraud checks are limited to manual spot checks on 1 in 20 refunds, and agents rely on memory to recognise repeat refund requesters.",
+          "new_state": "A fraud scoring model rates every request, requests with a score above 0.8 are sent for manual review, and the system flags a customer automatically after 3 refunds within 60 days."
+        },
+        {
+          "topic": "Refund Reasons and Reporting",
+          "old_state": "Refund reasons are written as free text, so the company cannot report which products cause the most refunds.",
+          "new_state": "Customers choose a reason code from a fixed list, and a weekly product-quality report shows which items generate the most refunds."
+        }
+      ],
+      "n_citations": 19,
+      "verified_shipped": 16,
+      "verified_current": 17,
+      "citations": [
+        {
+          "source": "refund_old.md",
+          "excerpt": "Refund requests are handled one at a time by support agents through email. The process has no self-service option for customers.",
+          "shipped": false,
+          "current": false,
+          "note": "excerpt not found in source text (best word overlap 64%)"
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Customers request refunds in the self-service Help Center.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "A refund above $20 needs approval from a team lead, who is asked through a chat message. A refund above $100 also needs the support manager.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "A refund under $50 is approved instantly if the customer's refund rate over the past 12 months is below 10% and the order was delivered within 30 days.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "A refund from $50 to $300 is routed to a support agent, who must respond within   a 4 hour service level.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "A refund above $300 needs review by both the support manager and a fraud analyst.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Finance pays refunds in a weekly batch. Approved requests wait in the sheet until Finance processes them in a weekly   batch every Thursday.",
+          "shipped": false,
+          "current": false,
+          "note": "excerpt not found in source text (best word overlap 74%)"
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Customers wait 9 days on average from request to money back.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Payouts run daily instead of weekly.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Approved refunds are paid in a daily run and reach the customer within   2 business days.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Refunds are accepted within 14 days of delivery.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "The refund window has been extended from 14 days   to 30 days after delivery.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Finance pays the refund to the original payment method only. Store credit is not offered.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Customers can choose store credit instead of a payment to the original method.   Store credit carries a 10% bonus.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Fraud checks are limited to manual spot checks on 1 in 20 refunds. Agents rely on memory to recognise customers who request refunds repeatedly. There is no shared   list of repeat refund requesters.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "A fraud scoring model rates every request. Requests with a score above 0.8 are sent   for manual review even when they fall under the automatic limit. The system flags a   customer automatically after 3 refunds within 60 days, and the flag is visible to   every agent.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Refund reasons are written as free text, so the company cannot report which   products cause the most refunds.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Customers open the Help Center, selects the order and chooses a reason code   from a fixed list.",
+          "shipped": false,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Reason codes are captured for every request. A weekly product-quality report shows   which items generate the most refunds, so merchandising can act on the data.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 2
+    },
+    {
+      "scenario": "refund",
+      "n_findings": 6,
+      "chunks_in_context": 6,
+      "chunks_total": 6,
+      "context_availability": 1.0,
+      "recall": 0.7142857142857143,
+      "covered": [
+        "channel",
+        "payout_cadence",
+        "window",
+        "fraud",
+        "reason_codes"
+      ],
+      "missed": [
+        "thresholds",
+        "store_credit"
+      ],
+      "latency_s": 3.5,
+      "findings": [
+        {
+          "topic": "Refund Request Channel",
+          "old_state": "The customer emails customer support to request a refund.",
+          "new_state": "Customers request refunds in the self-service Help Center."
+        },
+        {
+          "topic": "Refund Window",
+          "old_state": "Refunds are accepted within 14 days of delivery.",
+          "new_state": "The refund window has been extended from 14 days to 30 days after delivery."
+        },
+        {
+          "topic": "Payout Schedule",
+          "old_state": "Finance pays refunds in a weekly batch.",
+          "new_state": "Payouts run daily instead of weekly."
+        },
+        {
+          "topic": "Payout Methods",
+          "old_state": "Finance pays the refund to the original payment method only. Store credit is not offered.",
+          "new_state": "Customers can choose store credit instead of a payment to the original method."
+        },
+        {
+          "topic": "Fraud Controls",
+          "old_state": "Fraud checks are limited to manual spot checks on 1 in 20 refunds. Agents rely on memory to recognise customers who request refunds repeatedly.",
+          "new_state": "A fraud scoring model rates every request. The system flags a customer automatically after 3 refunds within 60 days, and the flag is visible to every agent."
+        },
+        {
+          "topic": "Refund Reason Tracking",
+          "old_state": "Refund reasons are written as free text, so the company cannot report which products cause the most refunds.",
+          "new_state": "Reason codes are captured for every request. A weekly product-quality report shows which items generate the most refunds"
+        }
+      ],
+      "n_citations": 12,
+      "verified_shipped": 12,
+      "verified_current": 12,
+      "citations": [
+        {
+          "source": "refund_old.md",
+          "excerpt": "1. The customer emails customer support to request a refund.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Customers request refunds in the self-service Help Center.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Refunds are accepted within 14 days of delivery.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "The refund window has been extended from 14 days\nto 30 days after delivery.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Finance pays refunds in a weekly batch.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Payouts run daily instead of weekly.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "6. Finance pays the refund to the original payment method only. Store credit is\n   not offered.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Customers can choose store credit instead of a payment to the original method.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Fraud checks are limited to manual spot checks on 1 in 20 refunds. Agents rely\non memory to recognise customers who request refunds repeatedly.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "A fraud scoring model rates every request. Requests with a score above 0.8 are sent\nfor manual review even when they fall under the automatic limit. The system flags a\ncustomer automatically after 3 refunds within 60 days, and the flag is visible to\nevery agent.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_old.md",
+          "excerpt": "Refund reasons are written as free text, so the company cannot report which\nproducts cause the most refunds.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        },
+        {
+          "source": "refund_new.md",
+          "excerpt": "Reason codes are captured for every request. A weekly product-quality report shows\nwhich items generate the most refunds, so merchandising can act on the data.",
+          "shipped": true,
+          "current": true,
+          "note": null
+        }
+      ],
+      "run": 3
+    }
+  ],
+  "disagreements": [
+    {
+      "scenario": "onboarding",
+      "source": "new_process.md",
+      "excerpt": "HR track: system-generated digital welcome packet, e-signature tax\nforms (W-4, I-9) and benefits enrollment sent to the employee's\npersonal email, due before day one.",
+      "shipped": false,
+      "current": true,
+      "note": null
+    },
+    {
+      "scenario": "onboarding",
+      "source": "new_process.md",
+      "excerpt": "IT track: automated ticket created in the IT provisioning system\nwith role-based access templates; laptop shipped and accounts\nprovisioned within 2 business days, tracked to completion in the\ndashboard.",
+      "shipped": false,
+      "current": true,
+      "note": null
+    },
+    {
+      "scenario": "onboarding",
+      "source": "new_process.md",
+      "excerpt": "Finance track: payroll setup record created automatically from the\nHRIS entry; no manual form walked to Finance.",
+      "shipped": false,
+      "current": true,
+      "note": null
+    },
+    {
+      "scenario": "expense",
+      "source": "expense_new.md",
+      "excerpt": "3. Claims under $200 with no policy flags are approved automatically with no\n   manager involvement.\n4. Claims from $200 to $2,000 go to the line manager, who has \n   response. If the manager does not respond, the claim escalates automatically to\n   the department head.\n5. Claims over $2,000 need approval from both the line manager and the finance\n   controller.",
+      "shipped": false,
+      "current": true,
+      "note": null
+    },
+    {
+      "scenario": "refund",
+      "source": "refund_new.md",
+      "excerpt": "Customers open the Help Center, selects the order and chooses a reason code   from a fixed list.",
+      "shipped": false,
+      "current": true,
+      "note": null
+    }
+  ],
+  "still_unverified": [
+    {
+      "scenario": "expense",
+      "source": "expense_new.md",
+      "excerpt": "An employee can attest to a lost receipt inside the app. The line is marked for\naudit, and each employee is limited to 3\nayed\n\n## Lost Receipts\nAn employee can attest to a lost receipt inside the app. The line is marked for\naudit, and each employee is limited to 3 attested lost receipts per quarter.\nBeyond that limit the claim is routed to the finance controller.",
+      "shipped": false,
+      "current": false,
+      "note": "excerpt not found in source text (best word overlap 67%)"
+    },
+    {
+      "scenario": "refund",
+      "source": "refund_old.md",
+      "excerpt": "Refund requests are handled one at a time by support agents through email. The process has no self-service option for customers.",
+      "shipped": false,
+      "current": false,
+      "note": "excerpt not found in source text (best word overlap 64%)"
+    },
+    {
+      "scenario": "refund",
+      "source": "refund_old.md",
+      "excerpt": "Refund requests are handled one at a time by support agents through email. The process has no self-service option for customers.",
+      "shipped": false,
+      "current": false,
+      "note": "excerpt not found in source text (best word overlap 64%)"
+    },
+    {
+      "scenario": "refund",
+      "source": "refund_old.md",
+      "excerpt": "Finance pays refunds in a weekly batch. Approved requests wait in the sheet until Finance processes them in a weekly   batch every Thursday.",
+      "shipped": false,
+      "current": false,
+      "note": "excerpt not found in source text (best word overlap 74%)"
+    }
+  ]
+}
